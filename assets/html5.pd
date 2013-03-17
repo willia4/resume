@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="pandoc"/>
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+<title>$title$</title>
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+<div id="container">
+<div id="header">$author$</div>
+
+<div id="body">
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+</div>
+</div>
+</body>
+</html>

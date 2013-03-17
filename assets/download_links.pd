@@ -1,0 +1,8 @@
+<div id="download_container">
+<h2 id="download">Download</h2>
+<ul>
+<li><a href="james_williams_resume.pdf">PDF Format</a></li>
+<li><a href="james_williams_resume.txt">Text File Format (Windows)</a></li>
+<li><a href="james_williams_resume.md">Markdown File Format</a></li>
+</ul>
+</div>

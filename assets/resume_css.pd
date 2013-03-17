@@ -1,0 +1,145 @@
+<!--CSS File Included Inline By Pandoc To Create Stand-Alone HTML File-->
+<style type="text/css">
+body { 
+	font-family: %%BODY_FONT%%;
+	font-size: 18px;
+}
+
+#header {
+	width: 80%;
+	font-size: 48pt;
+	text-align: center;
+	font-family: %%LOGO_FONT%%;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	border-bottom-width: 2px;
+
+	position: relative;
+	left: 10%;
+}
+
+#body { 
+	width: 76%;
+	position: relative;
+	left: 12%;
+}
+
+h1, h2 { 
+	font-family: %%HEADER_FONT%%;
+	color: #AD0932;
+}
+
+h2 { 
+	margin-left: .5em;
+	font-size: 1.4em;
+}
+
+h3 { 
+	color: black;
+	font-weight: bolder;
+	font-variant: small-caps;
+	margin-left: 1.2em;
+	display: inline;
+}
+
+h4 { 
+	display: block;
+	font-weight: normal;
+	font-size: 75%;
+	margin-left: 3em;
+	font-style: italic;
+	margin-top: .3em;
+	margin-bottom: 0px;
+}
+
+h1 { 
+	width: 100%;
+	display: block;
+	font-size: 1.8em;
+
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	border-bottom-width: 1px;
+}
+
+/*.resumeitem { 
+	margin-left: 2em;
+}*/
+p { 
+	margin-left: 2em;
+}
+
+a { 
+	color: #AD0932;
+}
+
+ul { 
+	margin-left: 1.5em;
+}
+
+ul li { 
+	text-indent: 0em;
+	padding-left: 0em;
+	margin-bottom: .3em;
+	list-style-type: square;
+	list-style-position: outside;
+	display: list-item;
+}
+
+#download_container { 
+	color: #858585;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #858585;
+	margin-top: 2em;
+}
+
+#download_container a { 
+	color: #858585;
+}
+
+#download {
+	color: #858585;
+}
+
+/********************************** 
+ **********************************
+ IMPORTANT: Every edit needs to have its page breaks managed
+ ********************************** 
+ **********************************/
+@media print {
+	/*#employment-experience, #education { 
+		page-break-before: always;
+	}*/
+
+	#download_container { 
+		display: none;
+	}
+
+	#header { 
+		font-size: 40pt;
+	}
+
+	h1 {
+		font-size: 20pt;
+	}
+
+	h2 { 
+		font-size: 15pt;
+	}
+
+	body { 
+		font-size: 12pt;
+	}
+}
+
+
+/*Does not seem to work in Safari's webkit*/
+/*@page {  
+	margin-left: 1in !important;  
+	margin-right: 1in !important;
+	margin-top: 1in !important;
+	margin-bottom: 1in !important; 
+} */
+
+</style>
