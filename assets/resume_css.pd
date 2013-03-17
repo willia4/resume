@@ -131,6 +131,11 @@ ul li {
 	body { 
 		font-size: 12pt;
 	}
+
+	a { 
+		color: black;
+		text-decoration: none;
+	}
 }
 
 

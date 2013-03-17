@@ -15,7 +15,7 @@ North Charleston, SC 29406
 
 Cell: 843.323.0627  
 Email: <james@jameswilliams.me>  
-Url: <http://jameswilliams.me/resume>
+Url: <http://jameswilliams.me>
 
 ## Key Skills
 * Visual Basic.Net
