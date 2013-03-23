@@ -19,7 +19,7 @@ $endfor$
 </head>
 <body>
 <div id="container">
-<div id="header">$author$</div>
+<div id="header"><a href="http://jameswilliams.me/">$author$</a></div>
 
 <div id="body">
 $body$
