@@ -1,7 +1,7 @@
 # Resume
 ## [James Williams][james]
 
-This project represents the resume of [James Williams][james]. The resume itself is written in [markdown][] and is translated to various formats using the excellent opensource software [pandoc][]. The PDF is generated using [wkhtmltopdf][] instead of pandoc's PDF generator because I prefer styling things with HTML and CSS instead of LaTeX. 
+This project represents the resume of [James Williams][james]. The resume itself is written in [markdown][] and is translated to various formats using the excellent open source software [pandoc][]. The PDF is generated using [wkhtmltopdf][] instead of pandoc's PDF generator because I prefer styling things with HTML and CSS instead of LaTeX. 
 
 The deploy target in the Makefile expects you to have my private SSH keys installed, so you won't have much luck there. 
 
@@ -9,7 +9,7 @@ Feel free to modify this work to create your own resume or other documents. The 
 
 If the resume itself interests you and you think you'd like to hire me, you may easily contact me at <james@jameswilliams.me>. 
 
-The permanant home of this resume on the web is at <http://jameswilliams.me/resume>.
+The permanent home of this resume on the web is at <http://jameswilliams.me/resume>.
 
 [james]: http://jameswilliams.me "Personal Website of James Williams"
 [markdown]: http://daringfireball.net/projects/markdown/ "John Gruber's Markdown"
