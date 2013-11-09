@@ -34,7 +34,7 @@ output/james_williams_resume.docx: output james_williams_resume.md
 .PHONY: deploy output
 
 output:
-	mkdir -p output
+	@mkdir -p output
 
 deploy: output/index.html output/james_williams_resume.pdf output/james_williams_resume.txt
 	scp output/index.html willia4@willia4.me:/www/jameswilliams.me/resume/index.html
