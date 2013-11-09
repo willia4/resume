@@ -18,35 +18,36 @@ Email: <james@jameswilliams.me>
 Url: <http://jameswilliams.me>
 
 ## Key Skills
-* Visual Basic.Net
-* The .Net Framework, WinForms
 * Microsoft SQL Server T-SQL queries, indexing, performance, etc.
-* Microsoft SQL Server SQL CLR procedures
+* Visual Basic.Net
+* Microsoft's .Net Framework
+* SQL Server SQL CLR procedures
 * Generating and parsing XML within .Net and Microsoft SQL Server
 * Objective-C, Cocoa, Cocoa Touch
-* Javascript, HTML, CSS, etc.
+* JavaScript, HTML, CSS, etc.
 
 
 ## Employment Experience
 ### Blackbaud, Inc.
-#### Senior Software Engineer  
+#### Staff Software Engineer  
 #### June 2005 &mdash; Present
 
-At Blackbaud, James works within a larger team to develop an enterprise-grade application platform used build best-in-class enterprise fundraising solutions using technologies ranging from .Net and Microsoft SQL Server to web services, Javascript and HTML.
+At Blackbaud, James works within a larger team to develop an enterprise-grade application platform used to build best-in-class enterprise fundraising solutions based on technologies ranging from .Net and Microsoft SQL Server to web services and JavaScript.
 
-James writes and works with code that must be able to input, manage, transform, and report on tens of millions of records without performance issues. Over the past six years, he has developed skills for writing efficient SQL Server queries (and tuning existing ones), finding and removing bottlenecks from HTTP web service traffic, and writing fast, correct code in general.
+James writes and works with code that must be able to input, manage, transform, and report on tens of millions of records without performance issues. Over the past eight years, he has developed skills for writing efficient SQL Server queries (and tuning existing ones), finding and removing bottlenecks from HTTP web service traffic, and writing fast, correct code in general.
 
-During his time at Blackbaud, James has led development teams and mentored new developers. He has been involved with transitions from waterfall development methodologies to Scrum and modified agile processes inspired by Marty Cagan.
+During his time at Blackbaud, James has led development teams and mentored new developers. He has been involved with transitions from waterfall development methodologies to Scrum and modified agile processes inspired by Marty Cagan. 
+
+He currently leads a team responsible for "back office" operations in the platform, including user-facing ad-hoc querying, basic reporting, and API-level functionality. In addition, James is a member of a "triad" &mdash; consisting of developer lead, a design lead, and a product owner &mdash; where he is instrumental in shepherding new features through a client-discovery process.
 
 ## Relevant, Non-Work Interests
 ### Cocoa Development
 
-In 2005, James bought his first Macintosh. Since then, he has fallen in love with Objective-C and Cocoa, the main framework in Mac OS X. He is self-taught on these technologies, and he is proficient in:
+In 2005, James bought his first Macintosh. Since then, he has fallen in love with Objective-C and Cocoa, the main UI framework in both iOS and Mac OS X. He has taught himself these technologies, and he is proficient in:
 
 * Objective-C
 * Cocoa
 * Cocoa Touch
-* The OS X network stack (including the high-level NSURLConnection classes and the middle-level CFNetwork framework)
 * Macintosh user experience design
 
 ## Education
