@@ -1,4 +1,5 @@
-all: output/local_resume.html output/index.html output/james_williams_resume.txt output/james_williams_resume.pdf
+
+all: output/local_resume.html output/index.html output/james_williams_resume.txt output/james_williams_resume.md #output/james_williams_resume.pdf
 
 clean: output
 	@rm output/*.html 2>/dev/null || true
@@ -31,13 +32,18 @@ output/james_williams_resume.docx: output james_williams_resume.md
 	echo This is experimental and should not be shared!
 	pandoc --standalone --smart -o output/james_williams_resume.docx james_williams_resume.md
 
+output/james_williams_resume.md: 
+	cp james_williams_resume.md output/james_williams_resume_temp.md
+	sed '/force-break/d' output/james_williams_resume_temp.md > output/james_williams_resume.md
+	rm output/james_williams_resume_temp.md
+
 .PHONY: deploy output
 
 output:
 	@mkdir -p output
 
-deploy: output/index.html output/james_williams_resume.pdf output/james_williams_resume.txt
+deploy: output/index.html output/james_williams_resume.txt output/james_williams_resume.md #output/james_williams_resume.pdf 
 	scp output/index.html willia4@willia4.me:/www/jameswilliams.me/resume/index.html
 	scp output/james_williams_resume.pdf willia4@willia4.me:/www/jameswilliams.me/resume/james_williams_resume.pdf
 	scp output/james_williams_resume.txt willia4@willia4.me:/www/jameswilliams.me/resume/james_williams_resume.txt
-	scp james_williams_resume.md willia4@willia4.me:/www/jameswilliams.me/resume/james_williams_resume.md
+	scp output/james_williams_resume.md willia4@willia4.me:/www/jameswilliams.me/resume/james_williams_resume.md

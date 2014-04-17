@@ -131,6 +131,10 @@ ul li {
 		page-break-before: always;
 	}*/
 
+	.force-break {
+		page-break-before: always;
+	}
+	
 	#download_container { 
 		display: none;
 	}
@@ -148,7 +152,7 @@ ul li {
 	}
 
 	body { 
-		font-size: 12pt;
+		font-size: 10.5pt;
 	}
 
 	a { 

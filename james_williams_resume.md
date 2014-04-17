@@ -1,14 +1,13 @@
 % Resume of James Williams
 % James Williams
-% November 10, 2013
+% March 21, 2014
 
 # Resum&eacute;
 
-## Objective
-Work with a team of other highly motivated and skilled developers to do challenging work quickly with a focus on quality and a superior user experience.
+## About
+James is a highly motivated developer who embraces challenging work. His primary technical interests are data storage and retrieval &mdash; with an emphasis on performance, reliability, and reporting UI.
 
 ## Personal
-### Contact Information
 James Williams  
 7980 Shadow Oak Dr.  
 North Charleston, SC 29406
@@ -21,11 +20,9 @@ Url: <http://jameswilliams.me>
 * Microsoft SQL Server T-SQL queries, indexing, performance, etc.
 * Visual Basic.Net
 * Microsoft's .Net Framework
-* SQL Server SQL CLR procedures
 * Generating and parsing XML within .Net and Microsoft SQL Server
-* Objective-C, Cocoa, Cocoa Touch
 * JavaScript, HTML, CSS, etc.
-
+* Objective-C, Cocoa, Cocoa Touch
 
 ## Employment Experience
 ### Blackbaud, Inc.
@@ -34,7 +31,8 @@ Url: <http://jameswilliams.me>
 
 At Blackbaud, James works within a larger team to develop an enterprise-grade application platform used to build best-in-class enterprise fundraising solutions based on technologies ranging from .Net and Microsoft SQL Server to web services and JavaScript.
 
-James writes and works with code that must be able to input, manage, transform, and report on tens of millions of records without performance issues. Over the past eight years, he has developed skills for writing efficient SQL Server queries (and tuning existing ones), finding and removing bottlenecks from HTTP web service traffic, and writing fast, correct code in general.
+<div class="force-break"></div>
+James writes and works with code that must be able to input, manage, transform, and report on tens of millions of records without performance issues. Over the past nine years, he has developed skills in: writing efficient SQL Server queries (and tuning existing ones), finding and removing bottlenecks from HTTP web service traffic, and writing fast, correct code.
 
 During his time at Blackbaud, James has led development teams and mentored new developers. He has been involved with transitions from waterfall development methodologies to Scrum and modified agile processes inspired by Marty Cagan. 
 
@@ -43,7 +41,7 @@ He currently leads a team responsible for "back office" operations in the platfo
 ## Relevant, Non-Work Interests
 ### Cocoa Development
 
-In 2005, James bought his first Macintosh. Since then, he has fallen in love with Objective-C and Cocoa, the main UI framework in both iOS and Mac OS X. He has taught himself these technologies, and he is proficient in:
+In 2005, James bought his first Macintosh. Since then, he has fallen in love with Objective-C and Cocoa, the main UI framework in both iOS and Mac OS X. He has taught himself these technologies, and he is a proficient hobbyist in:
 
 * Objective-C
 * Cocoa
@@ -59,8 +57,7 @@ James graduated from Clemson University with a Bachelor of Science degree in Com
 Clemson offered the standard vocational-focused computer science bachelor’s degree. Some areas to which James was exposed at school (and have been a factor in his later successes) include:
 
 * Java
-* C
-* C++
+* C / C++
 * Formal computation and automata
 * Operating systems
 * Complex data structures
