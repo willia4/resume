@@ -1,0 +1,22 @@
+$logo-font: "Futura";
+$title-font: "Le Monde Sans Std";
+
+body {
+	font-size: 13pt;
+
+	#container {
+		> header {
+			font-family: $logo-font;
+			font-size: 160%;
+		}
+
+		section {
+			.content {
+				> header {
+					font-weight: bold;
+					font-family: $title-font;
+				}
+			}
+		}
+	}
+}
