@@ -1,22 +1,130 @@
 $logo-font: "Futura";
 $title-font: "Le Monde Sans Std";
+$body-font: "Myriad Pro";
+$annotation-font: "Pollen";
+
+$spot-color: #AD0932;
+
+resume-content, resume-annotation {
+	display: none;
+}
+
+footer.printer-footer {
+	display: none;
+}
 
 body {
 	font-size: 13pt;
+	font-family: $body-font;
+
+	//Give all unordered lists a more interesting bullet
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		padding-left: 2em;
+		text-indent: -.7em;
+	}
+
+	li:before {
+		content: "‣ ";
+		// content: "◦ ";
+		// content: "• ";
+		color: $spot-color;
+	}
 
 	#container {
-		> header {
+		> header.page-title {
 			font-family: $logo-font;
 			font-size: 160%;
+			text-align: right;
+
+			border-bottom-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-color: #333;
+
+			margin-bottom: 8px;
 		}
 
-		section {
+		//each .content-section represents a resume-content and resume-annotation pair
+		section.content-section {
+			margin-top: 8px;
+
+			//a .content block hosts the title and content for a resume-content
 			.content {
+				> header.content-title {
+					font-weight: bold;
+					font-family: $title-font;
+					color: $spot-color;
+					font-size: 120%;
+				}
+
+				//a .resume-content hosts the actual HTML from a resume-content
+				.resume-content {
+					padding-left: 15px;
+					margin-top: 8px;
+
+					> header {
+						.section-title {
+							font-weight: bold;
+							font-family: $title-font;
+							font-size: 110%;
+						}
+						.section-subtitle {
+							font-style: italic;
+							font-size: 75%;
+							padding-left: 5px;
+
+							margin-bottom: 8px;
+						}
+					}
+				}
+			}
+
+			//a .annotation block hosts the (empty) title and content for a resume-annotation
+			.annotation {
+				margin-top: 8px;
+
 				> header {
 					font-weight: bold;
 					font-family: $title-font;
+					color: $spot-color;
+
+					font-size: 110%;
+					margin-bottom: 8px;
+				}
+
+				//a .resume-annotation hosts the actual HTML from a resume-annotation
+				.resume-annotation {
+					font-family: $annotation-font;
+					font-style: italic;
+					height: 100%;
+					font-size: 90%;
+
+					p:not(:first-child) {
+						margin-top: 5px;
+					}
 				}
 			}
 		}
 	}
+}
+
+@media print {
+	@page {
+		margin-left: 1in;
+		margin-right: 1in;
+
+		height: 11in;
+	}
+
+	//TODO
+	// footer.printer-footer {
+	// 	display: block;
+	// 	position: relative;
+	// 	bottom: 0;
+	// }
 }

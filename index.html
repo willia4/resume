@@ -2,29 +2,85 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="index.css" />
 	<title>James Williams - R&eacute;sum&eacute;</title>
 
 	<!-- alternating content with annotations is a lot of boilerplate. templates are the answer. -->
 	<script id="content-template" type="text/x-handlebars-template">
-		<header id="document-header" class="row">
+		<header id="document-header" class="row page-title">
 			<div class="col-xs-12">
 				James Williams
 			</div>
 		</header>
 
 		{{#each sections}}
-		<section class="row">
-			<div class="content col-sm-8 col-xs-12">
-				<header>{{title}}</header>
+		<section class="row content-section">
+			<div class="content col-sm-7 col-xs-12">
+				<header class="content-title">{{{title}}}</header>
+				<div class="resume-content">{{{content}}}</div>
 			</div>
-			<div class="annotation col-sm-4 hidden-xs">
-				
-			</div>
+			<aside class="annotation col-sm-4 hidden-xs">
+				<header class="content-title">&nbsp;</header>
+				<div class="resume-annotation">{{{annotation}}}</div>
+			</aside>
 		</section>
 		{{/each}}
 	</script>
+
+	<resume-content data-title="About">
+	</resume-content>
+
+	<resume-content data-title="Objective">
+	</resume-content>
+
+	<resume-content data-title="Work History">
+		<header>
+			<div class="section-title">Blackbaud, Inc.</div>
+			<div class="section-subtitle">Staff Software Engineer<br/>June 2005 &mdash; Present</div>
+		</header>
+
+		<ul>
+			<li>Team lead on the Enterprise Platform Team</li>
+			<li>Microsoft's .Net Platform</li> 
+			<li>Microsoft SQL Server</li>
+			<li>Javascript</li>
+		</ul>
+	</resume-content>
+
+	<resume-annotation data-for="Work History">
+		<p>The Enterprise Platform Team focuses on building and maintaining the Infinity platform which serves as the foundation for Blackbaud CRM &mdash; an Enterprise-scale CRM solution &mdash; as well as multiple mid-market hosted products. </p>
+
+		<p>As a team lead, I am the front line for my team when dealing with thorny production issues that range from helping our hosting services team diagnose environmental problems to providing developer support for customer-written customizations on top of our platform. </p>
+
+		<p>I also provide guidance to other teams building new product features on the Infinity platform, help architect and guide new platform 
+			feature development, participate in user discovery, research new UX techniques, and </p>
+	</resume-annotation>
+
+	<resume-content data-title="Education">
+		<header>
+			<div class="section-title">Clemson University</div>
+			<div class="section-subtitle">August 2001 &mdash; May 2005</div>
+		</header>
+		<ul>
+			<li>BS in Computer Science</li>
+			<li>Minor in Mathematics</li>
+		</ul>
+	</resume-content>
+
+	<resume-content data-title="Contact">
+		<ul> 
+			<li>843.323.0627</li>
+			<li><a href="mailto:james@jameswilliams.me">james@jameswilliams.me</a></li>
+			<li><a href="http://jameswilliams.me">http://jameswilliams.me</a></li>
+		</ul>
+	</resume-content>
+
+	<resume-annotation data-for="Contact">
+		We should talk!<br/><br/>Right now!
+	</resume-annotation>
 </head>
 
 <body>
@@ -32,6 +88,9 @@
 		
 	</article>
 
+	<footer class="printer-footer">An current version of this resume is always available at http://jameswilliams.me/resume</footer>
+
+	<script src="polyfill.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script src="handlebars-v3.0.0.js"></script>
 	<script src="content.js"></script>
