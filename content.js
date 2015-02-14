@@ -50,6 +50,7 @@
 	{
 		document.onreadystatechange = function() {
 			if(document.readyState == "complete") {
+				alert("IE");
 				//IE8 fallback
 				//TODO
 			}
