@@ -32,19 +32,36 @@ body {
       font-weight: bold;
       font-family: "Le Monde Sans Std";
       color: #AD0932;
-      font-size: 120%; }
+      font-size: 125%; }
     body #container section.content-section .content .resume-content {
       padding-left: 15px;
+      padding-right: 15px;
       margin-top: 8px; }
-      body #container section.content-section .content .resume-content > header .section-title {
+      body #container section.content-section .content .resume-content > header.content-header {
+        margin-bottom: 15px; }
+        body #container section.content-section .content .resume-content > header.content-header .section-title {
+          font-weight: bold;
+          font-family: "Le Monde Sans Std";
+          font-size: 120%;
+          padding-bottom: 2px;
+          border-bottom-style: solid;
+          border-color: #eee;
+          border-width: 1px; }
+        body #container section.content-section .content .resume-content > header.content-header .section-subtitle {
+          font-style: italic;
+          font-size: 75%;
+          padding-left: 5px;
+          margin-left: 5px; }
+      body #container section.content-section .content .resume-content header.content-detail-header {
+        font-family: "Pollen";
         font-weight: bold;
-        font-family: "Le Monde Sans Std";
-        font-size: 110%; }
-      body #container section.content-section .content .resume-content > header .section-subtitle {
         font-style: italic;
-        font-size: 75%;
-        padding-left: 5px;
-        margin-bottom: 8px; }
+        margin-top: 8px; }
+      body #container section.content-section .content .resume-content header.content-detail-header:before {
+        content: "—"; }
+      body #container section.content-section .content .resume-content .highlight {
+        color: #AD0932;
+        font-weight: bold; }
     body #container section.content-section .annotation {
       margin-top: 8px; }
       body #container section.content-section .annotation > header {

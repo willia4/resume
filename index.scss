@@ -59,27 +59,53 @@ body {
 					font-weight: bold;
 					font-family: $title-font;
 					color: $spot-color;
-					font-size: 120%;
+					font-size: 125%;
 				}
 
 				//a .resume-content hosts the actual HTML from a resume-content
 				.resume-content {
 					padding-left: 15px;
+					padding-right: 15px;
 					margin-top: 8px;
 
-					> header {
+					//Represents top-level headers like "Blackbaud" in "Work History"
+					> header.content-header {
+						margin-bottom: 15px;
+
 						.section-title {
 							font-weight: bold;
 							font-family: $title-font;
-							font-size: 110%;
+							font-size: 120%;
+
+							padding-bottom: 2px;
+							border-bottom-style: solid;
+							border-color: #eee;
+							border-width: 1px;
 						}
 						.section-subtitle {
 							font-style: italic;
 							font-size: 75%;
 							padding-left: 5px;
 
-							margin-bottom: 8px;
+							margin-left: 5px;
 						}
+					}
+
+					//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
+					header.content-detail-header {
+						font-family: $annotation-font;
+						font-weight: bold;
+						font-style: italic;
+						margin-top: 8px;
+					}
+
+					header.content-detail-header:before {
+						content: "—";
+					}
+
+					.highlight {
+						color: $spot-color;
+						font-weight: bold;
 					}
 				}
 			}
