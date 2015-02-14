@@ -16,6 +16,12 @@
 			</div>
 		</header>
 
+		<div id="hide-annotations" class="row">
+		<div class="col-sm-7 col-xs-12"></div>
+		<div id="annotations-toggle" class="col-sm-4 hidden-xs">
+			<a href="#" data-state="shown">hide annotations</a>
+		</div>
+
 		{{#each sections}}
 		<section class="row content-section">
 			<div class="content col-sm-7 col-xs-12">
@@ -23,6 +29,7 @@
 				<div class="resume-content">{{{content}}}</div>
 			</div>
 			<aside class="annotation col-sm-4 hidden-xs">
+				
 				<header class="content-title">&nbsp;</header>
 				<div class="resume-annotation">{{{annotation}}}</div>
 			</aside>
@@ -131,7 +138,7 @@
 	<article id="container" class="container">
 		
 	</article>
-	
+
 	<script src="polyfill.js"></script>
 	<script src="handlebars-v3.0.0.js"></script>
 	<script src="content.js"></script>

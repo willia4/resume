@@ -41,6 +41,31 @@
 		});
 
 		document.getElementById('container').innerHTML = template(contentObject);
+
+		function annotationToggleHandler() {
+			var state = this.getAttribute("data-state"),
+				annotations = document.querySelectorAll(".resume-annotation"),
+				newDisplay;
+
+			annotations = Array.prototype.slice.call(annotations); //convert the NodeList to an array
+
+			if (state === "shown") {
+				this.firstChild.nodeValue = "show annotations";
+				this.setAttribute("data-state", "hidden");
+
+				newDisplay = "none";
+			} else {
+				this.innerHTML = "hide annotations";
+				this.setAttribute("data-state", "shown");
+
+				newDisplay = "block";
+			}
+
+			annotations.forEach(function (el, i) {
+				el.style.display = newDisplay;
+			});
+		}
+		document.querySelector("#annotations-toggle a").addEventListener('click', annotationToggleHandler);
 	}
 
 	if (document.addEventListener) {

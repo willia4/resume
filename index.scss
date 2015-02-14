@@ -9,6 +9,16 @@ resume-content, resume-annotation {
 	display: none;
 }
 
+#annotations-toggle {
+	text-align: right;
+
+	a {
+		font-size: 75%;
+		color: $spot-color;
+		text-decoration: underline;
+	}
+}
+
 body {
 	font-size: 13pt;
 	font-family: $body-font;

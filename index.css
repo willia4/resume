@@ -2,6 +2,13 @@
 resume-content, resume-annotation {
   display: none; }
 
+#annotations-toggle {
+  text-align: right; }
+  #annotations-toggle a {
+    font-size: 75%;
+    color: #AD0932;
+    text-decoration: underline; }
+
 body {
   font-size: 13pt;
   font-family: "Myriad Pro"; }
