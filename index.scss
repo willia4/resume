@@ -139,21 +139,19 @@ body {
 			.annotation {
 				margin-top: $spacing;
 
-				> header {
-					font-weight: bold;
-					font-family: $title-font;
-					color: $spot-color;
-
-					font-size: 110%;
-					margin-bottom: $spacing;
-				}
-
 				//a .resume-annotation hosts the actual HTML from a resume-annotation
 				.resume-annotation {
 					font-family: $annotation-font;
 					font-style: italic;
 					height: 100%;
 					font-size: 90%;
+
+					//Bring the first paragraph of each annotation down a bit to better align with the 
+					//start of the section (below that section's header). This isn't perfect but it doesn't 
+					//detract from the appearance
+					p:first-child {
+						padding-top: 1.9em;
+					}
 
 					p:not(:first-child) {
 						margin-top: $spacing-small;

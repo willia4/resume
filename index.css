@@ -73,17 +73,13 @@ body {
         font-weight: bold; }
     body #container section.content-section .annotation {
       margin-top: 8px; }
-      body #container section.content-section .annotation > header {
-        font-weight: bold;
-        font-family: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
-        color: #AD0932;
-        font-size: 110%;
-        margin-bottom: 8px; }
       body #container section.content-section .annotation .resume-annotation {
         font-family: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
         font-style: italic;
         height: 100%;
         font-size: 90%; }
+        body #container section.content-section .annotation .resume-annotation p:first-child {
+          padding-top: 1.9em; }
         body #container section.content-section .annotation .resume-annotation p:not(:first-child) {
           margin-top: 5px; }
 
