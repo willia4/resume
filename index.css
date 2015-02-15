@@ -4,21 +4,21 @@ resume-content, resume-annotation {
 
 #print-email {
   display: none;
-  font-family: "Myriad Pro";
+  font-family: "myriad-pro-1", "myriad-pro-2";
   font-size: 75%;
   text-align: right; }
 
 #annotations-toggle {
   text-align: right; }
   #annotations-toggle a {
-    font-family: "Pollen";
+    font-family: "pollen-web-1", "pollen-web-2";
     font-size: 75%;
     color: #AD0932;
     text-decoration: underline; }
 
 body {
   font-size: 13pt;
-  font-family: "Myriad Pro"; }
+  font-family: "myriad-pro-1", "myriad-pro-2"; }
   body ul {
     list-style: none;
     padding: 0;
@@ -35,13 +35,13 @@ body {
     border-bottom-color: #333;
     margin-bottom: 8px; }
     body #container > header.page-title .logo {
-      font-family: "Futura";
+      font-family: "futura-pt-1", "futura-pt-2";
       font-size: 200%; }
   body #container section.content-section {
     margin-top: 8px; }
     body #container section.content-section .content > header.content-title {
       font-weight: bold;
-      font-family: "Le Monde Sans Std";
+      font-family: "lemonde-sans-1", "lemonde-sans-2";
       color: #AD0932;
       font-size: 125%; }
     body #container section.content-section .content .resume-content {
@@ -52,7 +52,7 @@ body {
         margin-bottom: 15px; }
         body #container section.content-section .content .resume-content > header.content-header .section-title {
           font-weight: bold;
-          font-family: "Le Monde Sans Std";
+          font-family: "lemonde-sans-1", "lemonde-sans-2";
           font-size: 120%;
           padding-bottom: 2px; }
         body #container section.content-section .content .resume-content > header.content-header .section-subtitle {
@@ -61,7 +61,7 @@ body {
           padding-left: 5px;
           margin-left: 5px; }
       body #container section.content-section .content .resume-content header.content-detail-header {
-        font-family: "Le Monde Sans Std";
+        font-family: "lemonde-sans-1", "lemonde-sans-2";
         font-weight: bold;
         font-variant: small-caps;
         margin-top: 8px;
@@ -73,12 +73,12 @@ body {
       margin-top: 8px; }
       body #container section.content-section .annotation > header {
         font-weight: bold;
-        font-family: "Le Monde Sans Std";
+        font-family: "lemonde-sans-1", "lemonde-sans-2";
         color: #AD0932;
         font-size: 110%;
         margin-bottom: 8px; }
       body #container section.content-section .annotation .resume-annotation {
-        font-family: "Pollen";
+        font-family: "pollen-web-1", "pollen-web-2";
         font-style: italic;
         height: 100%;
         font-size: 90%; }
