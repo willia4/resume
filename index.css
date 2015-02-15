@@ -96,6 +96,12 @@ body {
   a[href]:after {
     content: ""; }
 
+  .hidden-xs {
+    display: none !important; }
+
+  .content {
+    width: 100% !important; }
+
   @page {
     margin-left: 1in;
     margin-right: 1in;

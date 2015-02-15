@@ -179,6 +179,17 @@ body {
 		content: "";
 	}
 
+	//When printing, hide anything that would be hidden on mobile. This makes Firefox print like Chrome (Chrome prints like it's 
+	//a phone whereas Firefox prints like it's a tablet)
+	.hidden-xs {
+		display: none !important;
+	}
+
+	//When printing, stretch the visible content out to fill the grid. This is what happens on mobile and makes Firefox print like Chrome
+	.content {
+		width: 100% !important;
+	}
+
 	@page {
 		margin-left: 1in;
 		margin-right: 1in;
