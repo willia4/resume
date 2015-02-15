@@ -7,6 +7,7 @@
 			contentElements,
 			contentObject;
 
+		//the object that will be passed to the template
 		contentObject = {
 			sections: []
 		}
@@ -14,9 +15,10 @@
 		annotationElements = document.querySelectorAll('resume-annotation');
 		annotationElements = Array.prototype.slice.call(annotationElements); //convert the NodeList to an array
 
+		//build a hash of annotations so we can easily the right annotation for a block of content as we build the contentObject
 		annotationElements.forEach(function (el, i) {
 			var key = el.getAttribute("data-for"),
-				content = el.innerHTML || el.innerText;
+				content = el.innerHTML || el.innerText; //I've seen innerHTML be undefined for these elements on some browsers, so have a fail-safe
 
 			annotations[key] = content;
 		});
@@ -26,7 +28,7 @@
 
 		contentElements.forEach(function (el, i) {
 			var title = el.getAttribute("data-title"),
-				content = el.innerHTML || el.innerText,
+				content = el.innerHTML || el.innerText, //I've seen innerHTML be undefined for these elements on some browsers, so have a fail-safe
 				annotation = null;
 
 			if (annotations.hasOwnProperty(title)) {
@@ -70,6 +72,7 @@
 		document.querySelector("#annotations-toggle a").addEventListener('click', annotationToggleHandler);
 	}
 
+	//consider a browser "modern" if it supports addEventListener. Provide a fallback for other browsers. 
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', buildPage);	
 	}
