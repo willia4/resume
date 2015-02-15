@@ -89,6 +89,9 @@ body {
   #print-email {
     display: block; }
 
+  li:before, .content > header.content-title, .highlight {
+    color: #AD0932 !important; }
+
   @page {
     margin-left: 1in;
     margin-right: 1in;
