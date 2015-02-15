@@ -77,7 +77,8 @@ body {
         font-family: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
         font-style: italic;
         height: 100%;
-        font-size: 90%; }
+        font-size: 90%;
+        display: none; }
         body #container section.content-section .annotation .resume-annotation p:first-child {
           padding-top: 1.9em; }
         body #container section.content-section .annotation .resume-annotation p:not(:first-child) {
