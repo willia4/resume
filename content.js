@@ -63,6 +63,10 @@
 				newDisplay = "block";
 			}
 
+			//I toyed with the idea of using a CSS fade transition when toggling annotations but with annotations hidden,
+			//the layout of the resume proper should become a little tighter (since some of the annotations can be long).
+			//fading out and then abruptly re-laying-out the text on the left would be weird. So just set display:none
+			//and be done with it.
 			annotations.forEach(function (el, i) {
 				el.style.display = newDisplay;
 			});
