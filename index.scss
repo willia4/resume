@@ -39,6 +39,8 @@ body {
 	font-size: 13pt;
 	font-family: $body-font;
 
+	padding-bottom: 5em;
+
 	//Give all unordered lists a more interesting bullet
 	ul {
 		list-style: none;
@@ -188,6 +190,11 @@ body {
 	//When printing, stretch the visible content out to fill the grid. This is what happens on mobile and makes Firefox print like Chrome
 	.content {
 		width: 100% !important;
+	}
+
+	//Added padding for the body on the screen; but don't mess with the margins when printing:
+	body {
+		padding-bottom: 0;
 	}
 
 	@page {
