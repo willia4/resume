@@ -42,7 +42,7 @@
 
 		document.getElementById('container').innerHTML = template(contentObject);
 
-		function annotationToggleHandler() {
+		function annotationToggleHandler(evt) {
 			var state = this.getAttribute("data-state"),
 				annotations = document.querySelectorAll(".resume-annotation"),
 				newDisplay;
@@ -64,6 +64,8 @@
 			annotations.forEach(function (el, i) {
 				el.style.display = newDisplay;
 			});
+
+			evt.preventDefault();
 		}
 		document.querySelector("#annotations-toggle a").addEventListener('click', annotationToggleHandler);
 	}
