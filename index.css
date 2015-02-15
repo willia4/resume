@@ -24,8 +24,7 @@ body {
     color: #AD0932; }
   body #container > header.page-title {
     font-family: "Futura";
-    font-size: 160%;
-    text-align: right;
+    font-size: 200%;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #333;
