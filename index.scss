@@ -5,6 +5,13 @@ $annotation-font: "Pollen";
 
 $spot-color: #AD0932;
 
+$spacing: 8px;
+$spacing-big: 15px;
+$spacing-small: 5px;
+$spacing-tiny: 2px;
+
+//browsers want to render our custom tags even if they're in the header (the downside of not using script)
+//so ask them nicely not to do that.
 resume-content, resume-annotation {
 	display: none;
 }
@@ -13,6 +20,7 @@ resume-content, resume-annotation {
 	text-align: right;
 
 	a {
+		font-family: $annotation-font;
 		font-size: 75%;
 		color: $spot-color;
 		text-decoration: underline;
@@ -51,12 +59,12 @@ body {
 			border-bottom-width: 1px;
 			border-bottom-color: #333;
 
-			margin-bottom: 8px;
+			margin-bottom: $spacing;
 		}
 
 		//each .content-section represents a resume-content and resume-annotation pair
 		section.content-section {
-			margin-top: 8px;
+			margin-top: $spacing;
 
 			//a .content block hosts the title and content for a resume-content
 			.content {
@@ -69,40 +77,42 @@ body {
 
 				//a .resume-content hosts the actual HTML from a resume-content
 				.resume-content {
-					padding-left: 15px;
-					padding-right: 15px;
-					margin-top: 8px;
+					padding-left: $spacing-big;
+					padding-right: $spacing-big;
+					margin-top: $spacing;
 
 					//Represents top-level headers like "Blackbaud" in "Work History"
 					> header.content-header {
-						margin-bottom: 15px;
+						margin-bottom: $spacing-big;
 
 						.section-title {
 							font-weight: bold;
 							font-family: $title-font;
 							font-size: 120%;
 
-							padding-bottom: 2px;
+							padding-bottom: $spacing-tiny;
 						}
 						.section-subtitle {
 							font-style: italic;
 							font-size: 75%;
-							padding-left: 5px;
+							padding-left: $spacing-small;
 
-							margin-left: 5px;
+							margin-left: $spacing-small;
 						}
 					}
 
 					//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
 					header.content-detail-header {
-						font-family: $annotation-font;
+						font-family: $title-font;
 						font-weight: bold;
-						font-style: italic;
-						margin-top: 8px;
+						// font-style: italic;
+						font-variant: small-caps;
+						margin-top: $spacing;
+						text-transform: lowercase;
 					}
 
 					header.content-detail-header:before {
-						content: "—";
+						// content: "—";
 					}
 
 					.highlight {
@@ -114,7 +124,7 @@ body {
 
 			//a .annotation block hosts the (empty) title and content for a resume-annotation
 			.annotation {
-				margin-top: 8px;
+				margin-top: $spacing;
 
 				> header {
 					font-weight: bold;
@@ -122,7 +132,7 @@ body {
 					color: $spot-color;
 
 					font-size: 110%;
-					margin-bottom: 8px;
+					margin-bottom: $spacing;
 				}
 
 				//a .resume-annotation hosts the actual HTML from a resume-annotation
@@ -133,7 +143,7 @@ body {
 					font-size: 90%;
 
 					p:not(:first-child) {
-						margin-top: 5px;
+						margin-top: $spacing-small;
 					}
 				}
 			}

@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- I am not always sure where this will be served from, so add some http-equiv information just to be clear -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- using bootstrap for the grid and the included CSS reset. It's a lovely grid --> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="index.css" />
+
 	<title>James Williams - R&eacute;sum&eacute;</title>
 
-	<!-- alternating content with annotations is a lot of boilerplate. templates are the answer. -->
+	<!-- alternating content with alternating annotations is a lot of boilerplate. templates are the answer. -->
 	<script id="content-template" type="text/x-handlebars-template">
+		{{!-- The most straightforward thing to do is to replace the entire article.container contents with the template
+			  results. That means that I am including a little static content in the template so it will be able to be a 
+			  row in the main grid. This is small enough that it is not that messy.
+		--}}
 		<header id="document-header" class="row page-title">
 			<div class="col-xs-12">
 				James Williams
@@ -17,9 +24,9 @@
 		</header>
 
 		<div id="hide-annotations" class="row">
-		<div class="col-sm-7 col-xs-12"></div>
-		<div id="annotations-toggle" class="col-sm-4 hidden-xs">
-			<a href="#" data-state="shown">hide annotations</a>
+			<div class="col-sm-7 col-xs-12"></div>
+			<div id="annotations-toggle" class="col-sm-4 hidden-xs">
+				<a href="#" data-state="shown">hide annotations</a>
 		</div>
 
 		{{#each sections}}
@@ -37,6 +44,9 @@
 		{{/each}}
 	</script>
 
+	<!-- I could have used <script> tags to hold all of these (much like a handlebars template); but HTML5 encourages new tags to provide 
+		 semantic context, so why not? 
+	--> 
 	<resume-content data-title="About">
 		<p>I am a senior developer with a decade of experiece building out an enterprise-scale CRM system on a classic Microsoft stack.</p>
 
@@ -135,13 +145,15 @@
 </head>
 
 <body>
+	<!-- this element's HTML will be replaced by the template results. Make it a .container so the template can assume it's part of a 
+		 bootstrap grid 
+	-->
 	<article id="container" class="container">
 		
 	</article>
 
-	<script src="polyfill.js"></script>
-	<script src="handlebars-v3.0.0.js"></script>
-	<script src="content.js"></script>
-	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
+	<script src="polyfill.js"></script> 			<!-- make sure that Array.prototype.forEach is available -->
+	<script src="handlebars-v3.0.0.js"></script>	<!-- handlebars is nice -->
+	<script src="content.js"></script>				<!-- drive the content of this page -->
 </body>
 </html>

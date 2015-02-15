@@ -5,6 +5,7 @@ resume-content, resume-annotation {
 #annotations-toggle {
   text-align: right; }
   #annotations-toggle a {
+    font-family: "Pollen";
     font-size: 75%;
     color: #AD0932;
     text-decoration: underline; }
@@ -53,12 +54,11 @@ body {
           padding-left: 5px;
           margin-left: 5px; }
       body #container section.content-section .content .resume-content header.content-detail-header {
-        font-family: "Pollen";
+        font-family: "Le Monde Sans Std";
         font-weight: bold;
-        font-style: italic;
-        margin-top: 8px; }
-      body #container section.content-section .content .resume-content header.content-detail-header:before {
-        content: "—"; }
+        font-variant: small-caps;
+        margin-top: 8px;
+        text-transform: lowercase; }
       body #container section.content-section .content .resume-content .highlight {
         color: #AD0932;
         font-weight: bold; }
