@@ -16,6 +16,14 @@ resume-content, resume-annotation {
 	display: none;
 }
 
+#print-email {
+	display: none; //the @media print section will turn this back on
+
+	font-family: $body-font;
+	font-size: 75%;
+	text-align: right;
+}
+
 #annotations-toggle {
 	text-align: right;
 
@@ -52,9 +60,11 @@ body {
 
 	#container {
 		> header.page-title {
-			font-family: $logo-font;
-			font-size: 200%;
-
+			.logo {
+				font-family: $logo-font;
+				font-size: 200%;	
+			}
+			
 			border-bottom-style: solid;
 			border-bottom-width: 1px;
 			border-bottom-color: #333;
@@ -152,6 +162,10 @@ body {
 }
 
 @media print {
+	#print-email {
+		display: block;
+	}
+
 	@page {
 		margin-left: 1in;
 		margin-right: 1in;

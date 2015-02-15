@@ -2,6 +2,12 @@
 resume-content, resume-annotation {
   display: none; }
 
+#print-email {
+  display: none;
+  font-family: "Myriad Pro";
+  font-size: 75%;
+  text-align: right; }
+
 #annotations-toggle {
   text-align: right; }
   #annotations-toggle a {
@@ -24,12 +30,13 @@ body {
     content: "‣ ";
     color: #AD0932; }
   body #container > header.page-title {
-    font-family: "Futura";
-    font-size: 200%;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #333;
     margin-bottom: 8px; }
+    body #container > header.page-title .logo {
+      font-family: "Futura";
+      font-size: 200%; }
   body #container section.content-section {
     margin-top: 8px; }
     body #container section.content-section .content > header.content-title {
@@ -79,6 +86,9 @@ body {
           margin-top: 5px; }
 
 @media print {
+  #print-email {
+    display: block; }
+
   @page {
     margin-left: 1in;
     margin-right: 1in;
