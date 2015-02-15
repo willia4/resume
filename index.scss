@@ -1,7 +1,7 @@
-$logo-font: "futura-pt-1","futura-pt-2";
-$title-font: "lemonde-sans-1","lemonde-sans-2";
-$body-font: "myriad-pro-1","myriad-pro-2"; 
-$annotation-font: "pollen-web-1","pollen-web-2";
+$logo-font: "futura-pt-1","futura-pt-2", Helvetica, sans-serif;
+$title-font: "lemonde-sans-1","lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
+$body-font: "myriad-pro-1","myriad-pro-2", "Myriad Pro", Helvetica, sans-serif; 
+$annotation-font: "pollen-web-1","pollen-web-2", Pollen, Helvetica, sans-serif;
 
 $spot-color: #AD0932;
 
@@ -63,6 +63,7 @@ body {
 			.logo {
 				font-family: $logo-font;
 				font-size: 200%;	
+				font-weight: 500;
 			}
 			
 			border-bottom-style: solid;

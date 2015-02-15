@@ -4,21 +4,21 @@ resume-content, resume-annotation {
 
 #print-email {
   display: none;
-  font-family: "myriad-pro-1", "myriad-pro-2";
+  font-family: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
   font-size: 75%;
   text-align: right; }
 
 #annotations-toggle {
   text-align: right; }
   #annotations-toggle a {
-    font-family: "pollen-web-1", "pollen-web-2";
+    font-family: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
     font-size: 75%;
     color: #AD0932;
     text-decoration: underline; }
 
 body {
   font-size: 13pt;
-  font-family: "myriad-pro-1", "myriad-pro-2"; }
+  font-family: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif; }
   body ul {
     list-style: none;
     padding: 0;
@@ -35,13 +35,14 @@ body {
     border-bottom-color: #333;
     margin-bottom: 8px; }
     body #container > header.page-title .logo {
-      font-family: "futura-pt-1", "futura-pt-2";
-      font-size: 200%; }
+      font-family: "futura-pt-1", "futura-pt-2", Helvetica, sans-serif;
+      font-size: 200%;
+      font-weight: 500; }
   body #container section.content-section {
     margin-top: 8px; }
     body #container section.content-section .content > header.content-title {
       font-weight: bold;
-      font-family: "lemonde-sans-1", "lemonde-sans-2";
+      font-family: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
       color: #AD0932;
       font-size: 125%; }
     body #container section.content-section .content .resume-content {
@@ -52,7 +53,7 @@ body {
         margin-bottom: 15px; }
         body #container section.content-section .content .resume-content > header.content-header .section-title {
           font-weight: bold;
-          font-family: "lemonde-sans-1", "lemonde-sans-2";
+          font-family: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
           font-size: 120%;
           padding-bottom: 2px; }
         body #container section.content-section .content .resume-content > header.content-header .section-subtitle {
@@ -61,7 +62,7 @@ body {
           padding-left: 5px;
           margin-left: 5px; }
       body #container section.content-section .content .resume-content header.content-detail-header {
-        font-family: "lemonde-sans-1", "lemonde-sans-2";
+        font-family: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
         font-weight: bold;
         font-variant: small-caps;
         margin-top: 8px;
@@ -73,12 +74,12 @@ body {
       margin-top: 8px; }
       body #container section.content-section .annotation > header {
         font-weight: bold;
-        font-family: "lemonde-sans-1", "lemonde-sans-2";
+        font-family: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
         color: #AD0932;
         font-size: 110%;
         margin-bottom: 8px; }
       body #container section.content-section .annotation .resume-annotation {
-        font-family: "pollen-web-1", "pollen-web-2";
+        font-family: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
         font-style: italic;
         height: 100%;
         font-size: 90%; }
