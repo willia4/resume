@@ -19,7 +19,8 @@ resume-content, resume-annotation {
 body {
   font-size: 13pt;
   font-family: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
-  padding-bottom: 5em; }
+  padding-bottom: 5em;
+  background-color: #fcfcfc; }
   body ul {
     list-style: none;
     padding: 0;
@@ -101,7 +102,8 @@ body {
     width: 100% !important; }
 
   body {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    background-color: #ffffff; }
 
   @page {
     margin-left: 1in;

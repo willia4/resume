@@ -41,6 +41,8 @@ body {
 
 	padding-bottom: 5em;
 
+	background-color: #fcfcfc;
+
 	//Give all unordered lists a more interesting bullet
 	ul {
 		list-style: none;
@@ -193,9 +195,9 @@ body {
 		width: 100% !important;
 	}
 
-	//Added padding for the body on the screen; but don't mess with the margins when printing:
 	body {
-		padding-bottom: 0;
+		padding-bottom: 0; //Added padding for the body on the screen; but don't mess with the margins when printing:
+		background-color: #ffffff; //don't try to print our mostly-white page color
 	}
 
 	@page {
