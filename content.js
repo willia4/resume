@@ -80,7 +80,7 @@
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', buildPage);	
 	}
-	else //for a "non-modern" browser, fall back to displaying the PDF. 
+	else //for a "non-modern" browser, fall back to displaying the text file. 
 	{
 		(function () {
 			var newDocument = "james_williams_resume.txt";
