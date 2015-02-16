@@ -80,15 +80,16 @@
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', buildPage);	
 	}
-	else if(document.onreadystatechange)
+	else
 	{
-		document.onreadystatechange = function() {
-			if(document.readyState == "complete") {
-				alert("IE");
-				//IE8 fallback
-				//TODO
+		(function () {
+			var newDocument = "james_williams_resume.pdf";
+			//If the current URL doesn't end in a "/", add it
+			if (! /\/$/.test(location.href)) {
+				newDocument = "/" + newDocument;
 			}
-		}
+			location.href = location.href + newDocument;
+		})();
 	}
 	
 })();
