@@ -1,0 +1,67 @@
+# James Williams
+
+## About
+A senior developer with a decade of experiece building out an enterprise-scale 
+CRM system on a classic Microsoft stack while tackling issues like data 
+modeling, reliability, customizability, and performance
+
+Interested in building new products on up-and-coming technologies, exploring 
+advancements in user interface programming and design, and pursuing excellence 
+while surrounded by a passionate team
+
+## Key Skills
+
+* .Net — C#, VB.Net, Task Parallel Library, Async/Await
+* Microsoft SQL Server — performance tuning, advanced T-SQL, schema design
+* Javascript, jQuery, AJAX
+* Objective-C, Cocoa, AppKit, UIKit
+
+## Work History
+### Blackbaud, Inc.
+	Staff Software Engineer
+	June 2005 — Present
+
+#### Highlights
+Dev lead on the Enterprise Platform Team for an Enterprise CRM solution
+
+Made many performance improvements and feature enhancements to a powerful 
+ad-hoc query engine
+
+Diagnosed and resolved numerous production issues which could not be reproduced 
+locally
+
+Re-wrote legacy threaded code to use best practices, maintain process 
+consistency, and support cancellation with no disruption to existing client 
+code
+
+Wrote automated tests for critical infrastructure pieces including the 
+platform's security module, query engine accuracy, and long-running 
+multi-threaded processes
+
+Added dozens of features and resolved hundreds of bugs in legacy areas of the 
+system
+
+Side Projects
+A website for organizing a book club — built on Ruby and Sinatra using Amazon 
+Web Services and Redis for data storage
+
+Mac and iOS apps for generating secure, memorable passwords — built in 
+Objective-C and Swift
+
+A "branded" website for displaying photos and albums from a 3rd-party photo 
+hosting service — built in PHP with the SmugMug API for data storage
+
+This resume was written using the Handlebars template library, SCSS, 
+and no jQuery
+
+## Education
+### Clemson University
+	August 2001 — May 2005
+
+* BS in Computer Science
+* Minor in Mathematics
+
+## Contact
+* 843.323.0627
+* james@jameswilliams.me
+* http://jameswilliams.me

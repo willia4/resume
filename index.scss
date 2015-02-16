@@ -4,11 +4,32 @@ $body-font: "myriad-pro-1","myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
 $annotation-font: "pollen-web-1","pollen-web-2", Pollen, Helvetica, sans-serif;
 
 $spot-color: #AD0932;
+$gray-color: #858585;
 
 $spacing: 8px;
 $spacing-big: 15px;
 $spacing-small: 5px;
 $spacing-tiny: 2px;
+
+@mixin custom-bullets($color) {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		padding-left: 2em;
+		text-indent: -.7em;
+	}
+
+	li:before {
+		content: "‣ ";
+		// content: "◦ ";
+		// content: "• ";
+		color: $color;
+	}
+}
 
 //browsers want to render our custom tags even if they're in the header (the downside of not using script)
 //so ask them nicely not to do that.
@@ -44,23 +65,7 @@ body {
 	background-color: #fcfcfc;
 
 	//Give all unordered lists a more interesting bullet
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	li {
-		padding-left: 2em;
-		text-indent: -.7em;
-	}
-
-	li:before {
-		content: "‣ ";
-		// content: "◦ ";
-		// content: "• ";
-		color: $spot-color;
-	}
+	@include custom-bullets($spot-color);
 
 	#container {
 		> header.page-title {
@@ -83,6 +88,7 @@ body {
 
 			//a .content block hosts the title and content for a resume-content
 			.content {
+				//represents the section title, like "Work History"
 				> header.content-title {
 					font-weight: bold;
 					font-family: $title-font;
@@ -165,11 +171,36 @@ body {
 			}
 		}
 	}
+
+	#downloads { 
+		border-top-style: solid;
+		border-top-color: $gray-color;
+		border-top-width: 1px;
+
+		margin-top: $spacing-big * 3;
+		padding-top: $spacing-big;
+
+		color: $gray-color !important;
+		header {
+			color: $gray-color !important;
+		}
+
+		@include custom-bullets($gray-color);
+
+		a {
+			color: $gray-color;
+			text-decoration: underline;
+		}
+	}
 }
 
 @media print {
 	#print-email {
 		display: block;
+	}
+
+	#downloads {
+		display: none;
 	}
 
 	//bootstrap comes with a print CSS that turns off all colors with !important

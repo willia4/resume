@@ -84,10 +84,35 @@ body {
           padding-top: 1.9em; }
         body #container section.content-section .annotation .resume-annotation p:not(:first-child) {
           margin-top: 5px; }
+  body #downloads {
+    border-top-style: solid;
+    border-top-color: #858585;
+    border-top-width: 1px;
+    margin-top: 45px;
+    padding-top: 15px;
+    color: #858585 !important; }
+    body #downloads header {
+      color: #858585 !important; }
+    body #downloads ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    body #downloads li {
+      padding-left: 2em;
+      text-indent: -.7em; }
+    body #downloads li:before {
+      content: "‣ ";
+      color: #858585; }
+    body #downloads a {
+      color: #858585;
+      text-decoration: underline; }
 
 @media print {
   #print-email {
     display: block; }
+
+  #downloads {
+    display: none; }
 
   li:before, .content > header.content-title, .highlight {
     color: #AD0932 !important; }

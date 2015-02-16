@@ -34,6 +34,7 @@
 			<div class="col-sm-7 col-xs-12"></div>
 			<div id="annotations-toggle" class="col-sm-offset-1 col-sm-4 hidden-xs">
 				<a href="#" data-state="hidden">show annotations</a>
+			</div>
 		</div>
 
 		{{#each sections}}
@@ -47,6 +48,18 @@
 			</aside>
 		</section>
 		{{/each}}
+
+		<section class="row content-section">
+			<div id="downloads" class="content col-sm-7 col-xs-12">
+				<header class="content-title">Download</header>
+				<div class="resume-content">
+					<ul>
+						<li><a href="james_williams_resume.pdf">PDF Format</a></li>
+						<li><a href="james_williams_resume.txt">Text File Format</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 	</script>
 
 	<!-- I could have used <script> tags to hold all of these (much like a handlebars template); but HTML5 encourages new tags to provide 
@@ -61,9 +74,9 @@
 	</resume-content>
 
 	<resume-annotation data-for="About">
-		<p>The best part about this industry is that there's always something new to learn about and the future is always bright and expansive.</p>
+		<p>The best part about this industry is that there's always something new to learn and the future is always bright and expansive.</p>
 
-		<p>I don't know if my next project will involve web backends, Javascript frontends, or mobile clients &mdash; but I know it's exciting!</p>
+		<p>I don't know if my next project will involve web backends, Javascript frontends, or mobile clients &mdash; but I know it will be exciting!</p>
 	</resume-annotation>
 
 	<resume-content data-title="Key Skills">
@@ -99,15 +112,17 @@
 	</resume-content>
 
 	<resume-annotation data-for="Work History">
-		<p>The Enterprise Platform Team focuses on building and maintaining the Infinity platform which serves as the foundation for Blackbaud CRM &mdash; an Enterprise-scale CRM solution &mdash; as well as multiple mid-market hosted products. </p>
+		<p>The Enterprise Platform Team focuses on building and maintaining the single platform which serves as the foundation for Blackbaud CRM &mdash; an Enterprise-scale CRM product &mdash; as well as multiple mid-market hosted products. </p>
 
-		<p>As a team lead, I am the front line for my team when dealing with thorny production issues that range from helping our hosting services team diagnose environmental problems to providing developer support for customer-written customizations on top of our platform. In this role, I've worked closely with our product support and product management teams to ensure that 
-		I am always providing a customer-focused solution.</p>
+		<p>As a team lead, I am the front line for my team when dealing with thorny production issues that range from helping our hosting services team diagnose environmental problems 
+			to providing developer support for customer-written customizations on top of our platform. In this role, I've worked closely with our product support and product management 
+			teams to ensure that I am always providing a customer-focused solution whether I am fixing bugs across multiple product versions or recommending configuration changes to 
+			internal customer environments.</p>
 
 		<p>I also provide guidance to other teams building new product features on the Infinity platform, help architect and guide new platform 
 			feature development, participate in user discovery, research new UX techniques, and perform code reviews for both my team and others.</p>
 
-		<p>And this is all done without breaking compatibility for a large swathe of customizations written by both our clients and our 
+		<p>And I do all this without breaking compatibility for a large swathe of customizations written by both our clients and our 
 			internal professional services team.</p>
 	</resume-annotation>
 
