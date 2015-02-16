@@ -82,14 +82,11 @@
 	}
 	else //for a "non-modern" browser, fall back to displaying the text file. 
 	{
-		(function () {
-			var newDocument = "james_williams_resume.txt";
-			//If the current URL doesn't end in a "/", add it
-			if (! /\/$/.test(location.href)) {
-				newDocument = "/" + newDocument;
-			}
-			location.href = location.href + newDocument;
-		})();
+		document.getElementsByTagName("body")[0].innerHTML = 	'<body>This resume is available in the following formats: ' + 
+											 					'<ul>' +
+											 					'<li><a href="james_williams_resume.pdf">PDF</a></li>' +
+											 					'<li><a href="james_williams_resume.txt">Plain Text</a></li>' +
+											 					'</ul></body>'
 	}
 	
 })();
