@@ -80,10 +80,10 @@
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', buildPage);	
 	}
-	else
+	else //for a "non-modern" browser, fall back to displaying the PDF. 
 	{
 		(function () {
-			var newDocument = "james_williams_resume.pdf";
+			var newDocument = "james_williams_resume.txt";
 			//If the current URL doesn't end in a "/", add it
 			if (! /\/$/.test(location.href)) {
 				newDocument = "/" + newDocument;
