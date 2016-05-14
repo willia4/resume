@@ -28,6 +28,7 @@
 
 		contentElements.forEach(function (el, i) {
 			var title = el.getAttribute("data-title"),
+        extraClass = el.getAttribute("data-extra-class"),
 				content = el.innerHTML || el.innerText, //I've seen innerHTML be undefined for these elements on some browsers, so have a fail-safe
 				annotation = null;
 
@@ -38,7 +39,8 @@
 			contentObject.sections.push({
 				title: title, 
 				content: content,
-				annotation: annotation
+				annotation: annotation,
+        extraClass: (extraClass ? extraClass : "")
 			});
 		});
 

@@ -6,12 +6,13 @@ CRM system on a classic Microsoft stack while tackling issues like data
 modeling, reliability, customizability, and performance
 
 Interested in building new products on up-and-coming technologies, exploring 
-advancements in user interface programming and design, and pursuing excellence 
-while surrounded by a passionate team
+the future of cloud deployments, and pursuing excellence while surrounded by 
+a passionate team
 
 ## Key Skills
 
-* .Net — C#, VB.Net, Task Parallel Library, Async/Await
+* DevOps — Ansible, Docker, PowerShell
+* .Net — C#, VB.Net, Task Parallel Library, async programming
 * Microsoft SQL Server — performance tuning, advanced T-SQL, schema design
 * Javascript, jQuery, AJAX
 * Objective-C, Cocoa, AppKit, UIKit
@@ -22,7 +23,9 @@ while surrounded by a passionate team
 	June 2005 — Present
 
 #### Highlights
-Dev lead on the Enterprise Platform Team for an Enterprise CRM solution
+
+Founding member of the Enterprise DevOps team with the mandate to modernize 
+and streamline legacy application deployment in a cloud setting
 
 Made many performance improvements and feature enhancements to a powerful 
 ad-hoc query engine
@@ -41,7 +44,11 @@ multi-threaded processes
 Added dozens of features and resolved hundreds of bugs in legacy areas of the 
 system
 
-Side Projects
+## Side Projects
+A series of personal websites hosted as a set of Docker containers on a major 
+cloud provider; the sites are automatically deployed and updated via 
+Ansible playbooks
+
 A website for organizing a book club — built on Ruby and Sinatra using Amazon 
 Web Services and Redis for data storage
 
@@ -51,8 +58,8 @@ Objective-C and Swift
 A "branded" website for displaying photos and albums from a 3rd-party photo 
 hosting service — built in PHP with the SmugMug API for data storage
 
-This resume was written using the Handlebars template library, SCSS, 
-and no jQuery
+This resume was written using the Handlebars template library and SCSS and is 
+hosted in a Docker container managed by Ansible
 
 ## Education
 ### Clemson University

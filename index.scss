@@ -56,6 +56,12 @@ resume-content, resume-annotation {
 	}
 }
 
+.skill-category {
+	font-weight: bolder;
+	font-style: italic;
+	font-variant: small-caps;
+}
+
 body {
 	font-size: 13pt;
 	font-family: $body-font;
@@ -203,6 +209,10 @@ body {
 		display: none;
 	}
 
+	.page-break {
+		page-break-after: always;
+	}
+
 	//bootstrap comes with a print CSS that turns off all colors with !important
 	//so we have to overcome this braindead idea by explicitly turning it back on 
 	//for any colorized components which are not hidden when printing
@@ -227,6 +237,7 @@ body {
 	}
 
 	body {
+		font-size: 11pt;
 		padding-bottom: 0; //Added padding for the body on the screen; but don't mess with the margins when printing:
 		background-color: #ffffff; //don't try to print our mostly-white page color
 	}

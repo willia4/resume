@@ -16,6 +16,11 @@ resume-content, resume-annotation {
     color: #AD0932;
     text-decoration: underline; }
 
+.skill-category {
+  font-weight: bolder;
+  font-style: italic;
+  font-variant: small-caps; }
+
 body {
   font-size: 13pt;
   font-family: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
@@ -114,6 +119,9 @@ body {
   #downloads {
     display: none; }
 
+  .page-break {
+    page-break-after: always; }
+
   li:before, .content > header.content-title, .highlight {
     color: #AD0932 !important; }
 
@@ -127,6 +135,7 @@ body {
     width: 100% !important; }
 
   body {
+    font-size: 11pt;
     padding-bottom: 0;
     background-color: #ffffff; }
 
