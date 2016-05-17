@@ -1,5 +1,5 @@
 #IMAGE-NAME: willia4/resume
-#IMAGE-VERSION: 2.5.0
+#IMAGE-VERSION: 2.5.1
 FROM willia4/nginx_base:1.8.1-1
 MAINTAINER james@jameswilliams.me
 
