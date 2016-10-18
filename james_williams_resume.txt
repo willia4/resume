@@ -24,8 +24,8 @@ a passionate team
 
 #### Highlights
 
-Founding member of the Enterprise DevOps team with the mandate to modernize 
-and streamline legacy application deployment in a cloud setting
+Dev lead of the Enterprise DevOps team with the mandate to enable and empower 
+teams to embrace Azure PaaS deployment options
 
 Made many performance improvements and feature enhancements to a powerful 
 ad-hoc query engine
