@@ -21,7 +21,7 @@ var paths = {
     pages: ['src/*.html'],
     script: ['src/**/*.ts'],
     scss: ['src/**/*.scss'],
-    renders: ['./james_williams_resume.pdf', './james_williams_resume.txt']
+    renders: ['./assets/*.pdf', './assets/*.txt']
 };
 
 function makeWatch(paths: string[], task: string[] | string): (() => any) {
