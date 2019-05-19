@@ -1,8 +1,6 @@
 import { buildPage } from './content'
 
 (function () {
-	
-
 	//consider a browser "modern" if it supports addEventListener. Provide a fallback for other browsers. 
 	if (document.addEventListener) {
 		document.addEventListener('DOMContentLoaded', buildPage);	
@@ -15,5 +13,4 @@ import { buildPage } from './content'
 											 					'<li><a href="james_williams_resume.txt">Plain Text</a></li>' +
 											 					'</ul></body>'
 	}
-	
 })();
