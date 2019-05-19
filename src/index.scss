@@ -6,7 +6,7 @@ $annotation-font: "pollen-web-1","pollen-web-2", Pollen, Helvetica, sans-serif;
 $spot-color: #AD0932;
 $gray-color: #858585;
 
-$spacing: 8px;
+$spacing: 12px;
 $spacing-big: 15px;
 $spacing-small: 5px;
 $spacing-tiny: 2px;
@@ -73,8 +73,51 @@ body {
 	//Give all unordered lists a more interesting bullet
 	@include custom-bullets($spot-color);
 
+
 	#container {
+		// the main container is a 3 column grid on large screens; there are media queries below to adjust it 
+		// the left and right columns are empty though, so we can just make them 0 px on small screens using 
+		// grid auto sizing 
+
+		// normal screens: 3 column grid with ample spacing around the center column
+		@media screen and (min-width: 1801px) {
+			display: grid;
+			grid-template-columns:25% auto 25%;
+		}		
+		
+		// cramped screens somewhat bigger than standard iPads: 3 column grid with less spacing
+		@media screen and (min-width: 1051px) and (max-width: 1800px) {
+			display: grid;
+			grid-template-columns: 15% auto 15%;
+		}
+
+		// iPad-sized screens and small: no grid, just the content. Some 15px margins for breathing room
+		// for phone screens, we'll also turn off annotations below
+		@media (max-width: 1050px) {
+			display: block !important;
+			margin: 15px 15px 15px 15px;
+		}
+
+		#child-content {
+			grid-column: 2;
+
+			// most screens have annotations so the content sections should be in a 2-column grid
+			// main content in the bigger left column and annotations in the smaller right
+			@media (min-width: 741px) {
+				display: grid;
+				grid-template-columns: 1fr 0.5fr;
+			}
+
+			// phones have no space for annotations so don't show this as a grid
+			@media (max-width: 740px) {
+				display: block;
+			}
+			
+		
+
 		> header.page-title {
+			grid-column: 1 / 3;			
+
 			.logo {
 				font-family: $logo-font;
 				font-size: 200%;	
@@ -88,94 +131,108 @@ body {
 			margin-bottom: $spacing;
 		}
 
-		//each .content-section represents a resume-content and resume-annotation pair
-		section.content-section {
-			margin-top: $spacing;
+		#hide-annotations {
+			// take up the entire row in #content
+			grid-column: 1 / 3;
 
-			//a .content block hosts the title and content for a resume-content
-			.content {
-				//represents the section title, like "Work History"
-				> header.content-title {
-					font-weight: bold;
-					font-family: $title-font;
-					color: $spot-color;
-					font-size: 125%;
-				}
-
-				//a .resume-content hosts the actual HTML from a resume-content
-				.resume-content {
-					padding-left: $spacing-big;
-					padding-right: $spacing-big;
-					margin-top: $spacing;
-
-					//Represents top-level headers like "Blackbaud" in "Work History"
-					> header.content-header {
-						margin-bottom: $spacing-big;
-
-						.section-title {
-							font-weight: bold;
-							font-family: $title-font;
-							font-size: 120%;
-
-							padding-bottom: $spacing-tiny;
-						}
-						.section-subtitle {
-							font-style: italic;
-							font-size: 75%;
-							padding-left: $spacing-small;
-
-							margin-left: $spacing-small;
-						}
-					}
-
-					//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
-					header.content-detail-header {
-						font-family: $title-font;
-						font-weight: bold;
-						// font-style: italic;
-						font-variant: small-caps;
-						margin-top: $spacing;
-						text-transform: lowercase;
-					}
-
-					header.content-detail-header:before {
-						// content: "—";
-					}
-
-					.highlight {
-						color: $spot-color;
-						font-weight: bold;
-					}
-				}
+			// no annotation buttons on phones
+			@media (max-width: 740px) {
+				display: none;
+			}
+		}
+		//a .content block hosts the title and content for a resume-content
+		section.content {
+				grid-column: 1;
+				margin-top: $spacing;
+				
+			//represents the section title, like "Work History"
+			> header.content-title {
+				font-weight: bold;
+				font-family: $title-font;
+				color: $spot-color;
+				font-size: 125%;
 			}
 
-			//a .annotation block hosts the (empty) title and content for a resume-annotation
-			.annotation {
+			//a .resume-content hosts the actual HTML from a resume-content
+			.resume-content {
+				padding-left: $spacing-big;
+				padding-right: $spacing-big;
 				margin-top: $spacing;
 
-				//a .resume-annotation hosts the actual HTML from a resume-annotation
-				.resume-annotation {
-					font-family: $annotation-font;
-					font-style: italic;
-					height: 100%;
-					font-size: 90%;
+				//Represents top-level headers like "Blackbaud" in "Work History"
+				> header.content-header {
+					margin-bottom: $spacing-big;
 
-					//Bring the first paragraph of each annotation down a bit to better align with the 
-					//start of the section (below that section's header). This isn't perfect but it doesn't 
-					//detract from the appearance
-					p:first-child {
-						padding-top: 1.9em;
+					.section-title {
+						font-weight: bold;
+						font-family: $title-font;
+						font-size: 120%;
+
+						padding-bottom: $spacing-tiny;
 					}
+					.section-subtitle {
+						font-style: italic;
+						font-size: 75%;
+						padding-left: $spacing-small;
 
-					p:not(:first-child) {
-						margin-top: $spacing-small;
+						margin-left: $spacing-small;
 					}
+				}
 
-					//hidden by default
-					display: none;
+				//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
+				header.content-detail-header {
+					font-family: $title-font;
+					font-weight: bold;
+					// font-style: italic;
+					font-variant: small-caps;
+					margin-top: $spacing;
+					text-transform: lowercase;
+				}
+
+				header.content-detail-header:before {
+					// content: "—";
+				}
+
+				.highlight {
+					color: $spot-color;
+					font-weight: bold;
 				}
 			}
 		}
+
+		//a .annotation block hosts the (empty) title and content for a resume-annotation
+		.annotation {
+			grid-column: 2;
+			margin-top: $spacing;
+
+			// no annotations on phones
+			@media (max-width: 740px) {
+				display: none;
+			}
+
+			//a .resume-annotation hosts the actual HTML from a resume-annotation
+			.resume-annotation {
+				font-family: $annotation-font;
+				font-style: italic;
+				height: 100%;
+				font-size: 90%;
+
+				//Bring the first paragraph of each annotation down a bit to better align with the 
+				//start of the section (below that section's header). This isn't perfect but it doesn't 
+				//detract from the appearance
+				p:first-child {
+					padding-top: 1.9em;
+				}
+
+				p:not(:first-child) {
+					margin-top: $spacing-small;
+				}
+
+				//hidden by default
+				display: none;
+			}
+		}
+	}
 	}
 
 	#downloads { 
@@ -200,7 +257,13 @@ body {
 	}
 }
 
+
+
 @media print {
+	#container {
+		display: block !important;
+	}
+
 	#print-email {
 		display: block;
 	}

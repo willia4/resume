@@ -5,55 +5,52 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- sigh -->
+	<!-- I have a fear that HR managers may not always be using the latest browsers -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!-- load some nice fonts from typekit -->
 	<script src="//use.typekit.net/ymt2iyx.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
-	<!-- using bootstrap for the grid and the included CSS reset. It's a lovely grid --> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="index.css" />
 
 	<title>James Williams - R&eacute;sum&eacute;</title>
 
 	<!-- alternating content with alternating annotations is a lot of boilerplate. templates are the answer. -->
 	<script id="content-template" type="text/x-handlebars-template">
+		<div id="child-content">
 		{{!-- The most straightforward thing to do is to replace the entire article.container contents with the template
 			  results. That means that I am including a little static content in the template so it will be able to be a 
 			  row in the main grid. This is small enough that it is not that messy.
 		--}}
-		<header id="document-header" class="row page-title">
-			<div class="col-xs-7 logo">
+		<header id="document-header" class="page-title">
+			<div class="logo">
 				James Williams
 			</div>
-			<div class="col-xs-5" id="print-email">
+			<div class="" id="print-email">
 				<span class="logo">&nbsp;</span>james@jameswilliams.me
 			</div>
 		</header>
 
-		<div id="hide-annotations" class="row">
-			<div class="col-sm-7 col-xs-12"></div>
-			<div id="annotations-toggle" class="col-sm-offset-1 col-sm-4 hidden-xs">
+		<div id="hide-annotations">
+			<div class=""></div>
+			<div id="annotations-toggle" class="">
 				<a href="#" data-state="hidden">show annotations</a>
 			</div>
 		</div>
 
 		{{#each sections}}
-		<section class="row content-section {{{extraClass}}}">
-			<div class="content col-sm-7 col-xs-12">
+			<section class="content {{{extraClass}}}">
 				<header class="content-title">{{{title}}}</header>
 				<div class="resume-content">{{{content}}}</div>
-			</div>
-			<aside class="annotation col-sm-offset-1 col-sm-4 hidden-xs">
+			</section>
+			<aside class="annotation">
 				<div class="resume-annotation">{{{annotation}}}</div>
 			</aside>
-		</section>
 		{{/each}}
 
-		<section class="row content-section">
-			<div id="downloads" class="content col-sm-7 col-xs-12">
+		<section class="content-section">
+			<div id="downloads" class="content">
 				<header class="content-title">Download</header>
 				<div class="resume-content">
 					<ul>
@@ -63,6 +60,7 @@
 				</div>
 			</div>
 		</section>
+		</div>
 	</script>
 
 	<!-- I could have used <script> tags to hold all of these (much like a handlebars template); but HTML5 encourages new tags to provide 
@@ -183,7 +181,7 @@
 	<!-- this element's HTML will be replaced by the template results. Make it a .container so the template can assume it's part of a 
 		 bootstrap grid 
 	-->
-	<article id="container" class="container">
+	<article id="container" class="">
 		
 	</article>
 
