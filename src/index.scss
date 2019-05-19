@@ -1,7 +1,7 @@
-$logo-font: "futura-pt-1","futura-pt-2", Helvetica, sans-serif;
-$title-font: "lemonde-sans-1","lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
-$body-font: "myriad-pro-1","myriad-pro-2", "Myriad Pro", Helvetica, sans-serif; 
-$annotation-font: "pollen-web-1","pollen-web-2", Pollen, Helvetica, sans-serif;
+$logo-font: "futura-pt-1", "futura-pt-2", Helvetica, sans-serif;
+$title-font: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
+$body-font: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
+$annotation-font: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
 
 $spot-color: #AD0932;
 $gray-color: #858585;
@@ -33,7 +33,8 @@ $spacing-tiny: 2px;
 
 //browsers want to render our custom tags even if they're in the header (the downside of not using script)
 //so ask them nicely not to do that.
-resume-content, resume-annotation {
+resume-content,
+resume-annotation {
 	display: none;
 }
 
@@ -82,9 +83,9 @@ body {
 		// normal screens: 3 column grid with ample spacing around the center column
 		@media screen and (min-width: 1801px) {
 			display: grid;
-			grid-template-columns:25% auto 25%;
-		}		
-		
+			grid-template-columns: 25% auto 25%;
+		}
+
 		// cramped screens somewhat bigger than standard iPads: 3 column grid with less spacing
 		@media screen and (min-width: 1051px) and (max-width: 1800px) {
 			display: grid;
@@ -112,130 +113,132 @@ body {
 			@media (max-width: 740px) {
 				display: block;
 			}
-			
-		
 
-		> header.page-title {
-			grid-column: 1 / 3;			
 
-			.logo {
-				font-family: $logo-font;
-				font-size: 200%;	
-				font-weight: 500;
+
+			>header.page-title {
+				grid-column: 1 / 3;
+
+				.logo {
+					font-family: $logo-font;
+					font-size: 200%;
+					font-weight: 500;
+				}
+
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #333;
+
+				margin-bottom: $spacing;
 			}
-			
-			border-bottom-style: solid;
-			border-bottom-width: 1px;
-			border-bottom-color: #333;
 
-			margin-bottom: $spacing;
-		}
+			#hide-annotations {
+				// take up the entire row in #content
+				grid-column: 1 / 3;
 
-		#hide-annotations {
-			// take up the entire row in #content
-			grid-column: 1 / 3;
-
-			// no annotation buttons on phones
-			@media (max-width: 740px) {
-				display: none;
+				// no annotation buttons on phones
+				@media (max-width: 740px) {
+					display: none;
+				}
 			}
-		}
-		//a .content block hosts the title and content for a resume-content
-		section.content {
+
+			//a .content block hosts the title and content for a resume-content
+			section.content {
 				grid-column: 1;
 				margin-top: $spacing;
-				
-			//represents the section title, like "Work History"
-			> header.content-title {
-				font-weight: bold;
-				font-family: $title-font;
-				color: $spot-color;
-				font-size: 125%;
+
+				//represents the section title, like "Work History"
+				>header.content-title {
+					font-weight: bold;
+					font-family: $title-font;
+					color: $spot-color;
+					font-size: 125%;
+				}
+
+				//a .resume-content hosts the actual HTML from a resume-content
+				.resume-content {
+					padding-left: $spacing-big;
+					padding-right: $spacing-big;
+					margin-top: $spacing;
+
+					//Represents top-level headers like "Blackbaud" in "Work History"
+					>header.content-header {
+						margin-bottom: $spacing-big;
+
+						.section-title {
+							font-weight: bold;
+							font-family: $title-font;
+							font-size: 120%;
+
+							padding-bottom: $spacing-tiny;
+						}
+
+						.section-subtitle {
+							font-style: italic;
+							font-size: 75%;
+							padding-left: $spacing-small;
+
+							margin-left: $spacing-small;
+						}
+					}
+
+					//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
+					header.content-detail-header {
+						font-family: $title-font;
+						font-weight: bold;
+						// font-style: italic;
+						font-variant: small-caps;
+						margin-top: $spacing;
+						text-transform: lowercase;
+					}
+
+					header.content-detail-header:before {
+						// content: "—";
+					}
+
+					.highlight {
+						color: $spot-color;
+						font-weight: bold;
+					}
+				}
 			}
 
-			//a .resume-content hosts the actual HTML from a resume-content
-			.resume-content {
-				padding-left: $spacing-big;
-				padding-right: $spacing-big;
+			//a .annotation block hosts the (empty) title and content for a resume-annotation
+			.annotation {
+				grid-column: 2;
 				margin-top: $spacing;
 
-				//Represents top-level headers like "Blackbaud" in "Work History"
-				> header.content-header {
-					margin-bottom: $spacing-big;
+				// no annotations on phones
+				@media (max-width: 740px) {
+					display: none;
+				}
 
-					.section-title {
-						font-weight: bold;
-						font-family: $title-font;
-						font-size: 120%;
+				//a .resume-annotation hosts the actual HTML from a resume-annotation
+				.resume-annotation {
+					font-family: $annotation-font;
+					font-style: italic;
+					height: 100%;
+					font-size: 90%;
 
-						padding-bottom: $spacing-tiny;
+					//Bring the first paragraph of each annotation down a bit to better align with the 
+					//start of the section (below that section's header). This isn't perfect but it doesn't 
+					//detract from the appearance
+					p:first-child {
+						padding-top: 1.9em;
 					}
-					.section-subtitle {
-						font-style: italic;
-						font-size: 75%;
-						padding-left: $spacing-small;
 
-						margin-left: $spacing-small;
+					p:not(:first-child) {
+						margin-top: $spacing-small;
 					}
-				}
 
-				//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
-				header.content-detail-header {
-					font-family: $title-font;
-					font-weight: bold;
-					// font-style: italic;
-					font-variant: small-caps;
-					margin-top: $spacing;
-					text-transform: lowercase;
-				}
-
-				header.content-detail-header:before {
-					// content: "—";
-				}
-
-				.highlight {
-					color: $spot-color;
-					font-weight: bold;
+					//hidden by default
+					display: none;
 				}
 			}
 		}
-
-		//a .annotation block hosts the (empty) title and content for a resume-annotation
-		.annotation {
-			grid-column: 2;
-			margin-top: $spacing;
-
-			// no annotations on phones
-			@media (max-width: 740px) {
-				display: none;
-			}
-
-			//a .resume-annotation hosts the actual HTML from a resume-annotation
-			.resume-annotation {
-				font-family: $annotation-font;
-				font-style: italic;
-				height: 100%;
-				font-size: 90%;
-
-				//Bring the first paragraph of each annotation down a bit to better align with the 
-				//start of the section (below that section's header). This isn't perfect but it doesn't 
-				//detract from the appearance
-				p:first-child {
-					padding-top: 1.9em;
-				}
-
-				p:not(:first-child) {
-					margin-top: $spacing-small;
-				}
-
-				//hidden by default
-				display: none;
-			}
-		}
-	}
 	}
 
-	#downloads { 
+	#downloads {
 		border-top-style: solid;
 		border-top-color: $gray-color;
 		border-top-width: 1px;
@@ -244,6 +247,7 @@ body {
 		padding-top: $spacing-big;
 
 		color: $gray-color !important;
+
 		header {
 			color: $gray-color !important;
 		}
@@ -279,7 +283,9 @@ body {
 	//bootstrap comes with a print CSS that turns off all colors with !important
 	//so we have to overcome this braindead idea by explicitly turning it back on 
 	//for any colorized components which are not hidden when printing
-	li:before, .content > header.content-title, .highlight {
+	li:before,
+	.content>header.content-title,
+	.highlight {
 		color: $spot-color !important;
 	}
 
