@@ -18,7 +18,8 @@ var tsify = require("tsify");
 var paths = {
     pages: ['src/*.html'],
     script: ['src/**/*.ts'],
-    scss: ['src/**/*.scss']
+    scss: ['src/**/*.scss'],
+    renders: ['./james_williams_resume.pdf', './james_williams_resume.txt']
 };
 
 function makeWatch(paths: string[], task: string[] | string): (() => any) {
@@ -46,6 +47,20 @@ gulp.task('build-html:watch', () => {
 
 gulp.task('clean-html', () => {
   return del("dist/**/*.html");
+})
+
+gulp.task("build-renders", () => {
+  return gulp.src(paths.renders)
+      .pipe(gulp.dest("dist"));
+});
+
+gulp.task('build-renders:watch', () => {
+return makeWatch(paths.renders, 'build-renders')();
+});
+
+gulp.task('clean-renders', () => {
+return del("dist/**/*.pdf")
+  .then(() => del("dist/**/*.txt"))
 })
 
 gulp.task('build-styles', () => {
@@ -100,10 +115,10 @@ gulp.task('clean-scripts', () => {
   return del(["dist/**/*.js", "dist/**/*.js.map"]);
 })
 
-gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles"]))
-gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles"])));
+gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-renders"]))
+gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-renders"])));
 
-gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch"])));
+gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-renders:watch"])));
 
 gulp.task("serve", gulp.parallel(["watch", () => { 
   return gulp
