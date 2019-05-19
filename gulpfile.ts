@@ -137,7 +137,7 @@ gulp.task("serve",
   gulp.series(
     (taskDone) => {
       fs.exists('./dist', (exists) => {
-        if (exists) { return taskDone; }
+        if (exists) { return taskDone(); }
 
         fs.mkdir("./dist", (err) => {
           return taskDone(err);
