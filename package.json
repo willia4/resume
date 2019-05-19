@@ -1,6 +1,6 @@
 {
   "name": "jameswilliams-resume",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "The resume of james@jameswilliams.me",
   "main": "content.js",
   "dependencies": {
