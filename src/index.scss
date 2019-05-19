@@ -29,13 +29,6 @@ $spacing-tiny: 2px;
 	}
 }
 
-//browsers want to render our custom tags even if they're in the header (the downside of not using script)
-//so ask them nicely not to do that.
-resume-content,
-resume-annotation {
-	display: none;
-}
-
 #print-email {
 	display: none; //the @media print section will turn this back on
 
@@ -46,7 +39,7 @@ resume-annotation {
 
 
 
-.skill-category {
+.skill-category, .dictionary-key {
 	font-weight: bolder;
 	font-style: italic;
 	font-variant: small-caps;

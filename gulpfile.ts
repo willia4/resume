@@ -3,9 +3,11 @@ import * as sourcemaps from 'gulp-sourcemaps';
 import * as sass from 'gulp-sass';
 import * as uglify from 'gulp-uglify';
 import * as util from 'gulp-util';
+import * as tap from 'gulp-tap';
 
 import * as browserify from 'browserify';
 import * as globby from 'globby';
+import * as yaml from 'js-yaml';
 
 import * as fs from 'fs';
 import * as del from 'del';
@@ -13,6 +15,7 @@ import * as del from 'del';
 import through = require('through2');
 import source =  require('vinyl-source-stream');
 import buffer = require('vinyl-buffer');
+
 const webserver = require('gulp-webserver');
 
 var tsify = require("tsify");
@@ -21,7 +24,8 @@ var paths = {
     pages: ['src/*.html'],
     script: ['src/**/*.ts'],
     scss: ['src/**/*.scss'],
-    renders: ['./assets/*.pdf', './assets/*.txt']
+    assets: ['./assets/*.pdf', './assets/*.txt'],
+    yaml: [ 'src/**/*.yaml']
 };
 
 function makeWatch(paths: string[], task: string[] | string): (() => any) {
@@ -63,17 +67,36 @@ gulp.task('clean-html', () => {
   return clean("dist/**/*.html");
 })
 
-gulp.task("build-renders", () => {
-  return gulp.src(paths.renders)
+gulp.task("build-assets", () => {
+  return gulp.src(paths.assets)
       .pipe(gulp.dest("dist"));
 });
 
-gulp.task('build-renders:watch', () => {
-  return makeWatch(paths.renders, 'build-renders')();
+gulp.task('build-assets:watch', () => {
+  return makeWatch(paths.assets, 'build-assets')();
 });
 
-gulp.task('clean-renders', () => {
+gulp.task('clean-assets', () => {
   return clean("dist/**/*.pdf", "dist/**/*.txt");
+})
+
+
+
+gulp.task("build-yaml", () => {
+  return gulp.src(paths.yaml)
+      .pipe(tap((file) => {
+          yaml.load(file.contents.toString());
+        })
+      )
+      .pipe(gulp.dest("dist"));
+});
+
+gulp.task('build-yaml:watch', () => {
+  return makeWatch(paths.yaml, 'build-yaml')();
+});
+
+gulp.task('clean-yaml', () => {
+  return clean("dist/**/*.yaml",);
 })
 
 gulp.task('build-styles', () => {
@@ -128,10 +151,10 @@ gulp.task('clean-scripts', () => {
   return clean("dist/**/*.js", "dist/**/*.js.map");
 })
 
-gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-renders"]))
-gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-renders"])));
+gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-assets"]))
+gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-assets"])));
 
-gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-renders:watch"])));
+gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-assets:watch", "build-yaml:watch"])));
 
 gulp.task("serve", 
   gulp.series(

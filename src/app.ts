@@ -1,9 +1,9 @@
-import { buildPage } from './content'
+import { buildPageFromYaml }  from './yaml-builder';
 
 (function () {
 	//consider a browser "modern" if it supports addEventListener. Provide a fallback for other browsers. 
 	if (document.addEventListener) {
-		document.addEventListener('DOMContentLoaded', buildPage);	
+		document.addEventListener('DOMContentLoaded', buildPageFromYaml);	
 	}
 	else //for a "non-modern" browser, fall back to displaying the text file. 
 	{
