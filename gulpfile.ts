@@ -2,6 +2,8 @@ import * as gulp from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as sass from 'gulp-sass';
 import * as uglify from 'gulp-uglify';
+
+
 import * as browserify from 'browserify';
 import * as globby from 'globby';
 import * as del from 'del';
@@ -9,7 +11,7 @@ import * as del from 'del';
 import through = require('through2');
 import source =  require('vinyl-source-stream');
 import buffer = require('vinyl-buffer');
-
+const webserver = require('gulp-webserver');
 
 var tsify = require("tsify");
 
@@ -100,3 +102,13 @@ gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles"]
 gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles"])));
 
 gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch"])));
+
+gulp.task("serve", gulp.parallel(["watch", () => { 
+  return gulp
+    .src("./dist")
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: false
+    }));
+}]))
