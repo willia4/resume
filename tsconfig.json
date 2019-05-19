@@ -1,0 +1,32 @@
+{
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./node_modules/@types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "es5",
+
+    "declaration": false,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "baseUrl": "./",
+    "typeRoots": [
+        "node_modules/@types"
+    ],
+    "types": [
+        "node"
+    ]
+  }
+}
