@@ -2,7 +2,7 @@ import * as gulp from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as sass from 'gulp-sass';
 import * as uglify from 'gulp-uglify';
-
+import * as util from 'gulp-util';
 
 import * as browserify from 'browserify';
 import * as globby from 'globby';
@@ -50,6 +50,7 @@ gulp.task('clean-html', () => {
 
 gulp.task('build-styles', () => {
   return gulp.src(paths.scss)
+    .on('error', util.log)
     .pipe(sourcemaps.init())
     .pipe(sass.sync({
       outputStyle: "compressed"
@@ -70,6 +71,7 @@ gulp.task("build-scripts", () => {
   
   var bundledStream = through();
   bundledStream
+    .on('error', util.log)
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
