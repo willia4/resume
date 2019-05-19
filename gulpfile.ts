@@ -33,20 +33,20 @@ function makeWatch(paths: string[], task: string[] | string): (() => any) {
   });
 }
 
-gulp.task("copy-html", () => {
+gulp.task("build-html", () => {
     return gulp.src(paths.pages)
         .pipe(gulp.dest("dist"));
 });
 
-gulp.task('copy-html:watch', () => {
-  return makeWatch(paths.pages, 'copy-html')();
+gulp.task('build-html:watch', () => {
+  return makeWatch(paths.pages, 'build-html')();
 });
 
 gulp.task('clean-html', () => {
   return del("dist/**/*.html");
 })
 
-gulp.task('compile-styles', () => {
+gulp.task('build-styles', () => {
   return gulp.src(paths.scss)
     .pipe(sourcemaps.init())
     .pipe(sass.sync({
@@ -56,15 +56,15 @@ gulp.task('compile-styles', () => {
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task('compile-styles:watch', () => {
-  return makeWatch(paths.scss, 'compile-styles')();
+gulp.task('build-styles:watch', () => {
+  return makeWatch(paths.scss, 'build-styles')();
 });
 
 gulp.task('clean-styles', () => {
   return del(["dist/**/*.css", "dist/**/*.css.map"]);
 })
 
-gulp.task("compile-scripts", () => {
+gulp.task("build-scripts", () => {
   
   var bundledStream = through();
   bundledStream
@@ -88,8 +88,8 @@ gulp.task("compile-scripts", () => {
   return bundledStream;
 });
 
-gulp.task("compile-scripts:watch", () => {
-  return makeWatch(paths.script, 'compile-scripts')();
+gulp.task("build-scripts:watch", () => {
+  return makeWatch(paths.script, 'build-scripts')();
 });
 
 gulp.task('clean-scripts', () => {
@@ -97,6 +97,6 @@ gulp.task('clean-scripts', () => {
 })
 
 gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles"]))
-gulp.task("build", gulp.series("clean", gulp.parallel(["compile-scripts", "copy-html", "compile-styles"])));
+gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles"])));
 
-gulp.task("watch", gulp.parallel(["compile-scripts:watch", "copy-html:watch", "compile-styles:watch"]));
+gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch"])));
