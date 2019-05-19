@@ -4,6 +4,7 @@ import * as sass from 'gulp-sass';
 import * as uglify from 'gulp-uglify';
 import * as browserify from 'browserify';
 import * as globby from 'globby';
+import * as del from 'del';
 
 import through = require('through2');
 import source =  require('vinyl-source-stream');
@@ -41,6 +42,10 @@ gulp.task('copy-html:watch', () => {
   return makeWatch(paths.pages, 'copy-html')();
 });
 
+gulp.task('clean-html', () => {
+  return del("dist/**/*.html");
+})
+
 gulp.task('compile-styles', () => {
   return gulp.src(paths.scss)
     .pipe(sourcemaps.init())
@@ -54,6 +59,10 @@ gulp.task('compile-styles', () => {
 gulp.task('compile-styles:watch', () => {
   return makeWatch(paths.scss, 'compile-styles')();
 });
+
+gulp.task('clean-styles', () => {
+  return del(["dist/**/*.css", "dist/**/*.css.map"]);
+})
 
 gulp.task("compile-scripts", () => {
   
@@ -83,5 +92,11 @@ gulp.task("compile-scripts:watch", () => {
   return makeWatch(paths.script, 'compile-scripts')();
 });
 
-gulp.task("build", gulp.parallel(["compile-scripts", "copy-html", "compile-styles"]))
+gulp.task('clean-scripts', () => {
+  return del(["dist/**/*.js", "dist/**/*.js.map"]);
+})
+
+gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles"]))
+gulp.task("build", gulp.series("clean", gulp.parallel(["compile-scripts", "copy-html", "compile-styles"])));
+
 gulp.task("watch", gulp.parallel(["compile-scripts:watch", "copy-html:watch", "compile-styles:watch"]));
