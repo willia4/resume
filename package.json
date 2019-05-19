@@ -1,0 +1,52 @@
+{
+  "name": "jameswilliams-resume",
+  "version": "3.0.0",
+  "description": "The resume of james@jameswilliams.me",
+  "main": "content.js",
+  "dependencies": {
+    "handlebars": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/browserify": "^12.0.36",
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-sass": "^4.0.0",
+    "@types/gulp-sourcemaps": "0.0.32",
+    "@types/gulp-uglify": "^3.0.6",
+    "@types/gulp-util": "^3.0.34",
+    "@types/node": "^12.0.2",
+    "@types/through2": "^2.0.34",
+    "@types/vinyl-buffer": "^1.0.0",
+    "@types/vinyl-source-stream": "0.0.30",
+    "browserify": "^16.2.3",
+    "del": "^4.1.1",
+    "glob-watcher": "^5.0.3",
+    "globby": "^9.2.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1",
+    "node-sass": "^4.12.0",
+    "through2": "^3.0.1",
+    "ts-node": "^8.1.0",
+    "tsify": "^4.0.1",
+    "typescript": "^3.4.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willia4/resume.git"
+  },
+  "author": "James Williams <james@jameswilliams.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willia4/resume/issues"
+  },
+  "homepage": "https://github.com/willia4/resume#readme"
+}
