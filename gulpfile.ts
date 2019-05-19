@@ -6,6 +6,8 @@ import * as util from 'gulp-util';
 
 import * as browserify from 'browserify';
 import * as globby from 'globby';
+
+import * as fs from 'fs';
 import * as del from 'del';
 
 import through = require('through2');
@@ -36,6 +38,18 @@ function makeWatch(paths: string[], task: string[] | string): (() => any) {
   });
 }
 
+function clean(...globs: string[]): Promise<any> {
+  let lastPromise: Promise<any> = Promise.resolve();
+  
+  globs.forEach((g) => {
+    lastPromise = lastPromise
+      .then(() => del(g))
+      .catch((err) => console.log(err));
+  })
+
+  return lastPromise;
+}
+
 gulp.task("build-html", () => {
     return gulp.src(paths.pages)
         .pipe(gulp.dest("dist"));
@@ -46,7 +60,7 @@ gulp.task('build-html:watch', () => {
 });
 
 gulp.task('clean-html', () => {
-  return del("dist/**/*.html");
+  return clean("dist/**/*.html");
 })
 
 gulp.task("build-renders", () => {
@@ -55,12 +69,11 @@ gulp.task("build-renders", () => {
 });
 
 gulp.task('build-renders:watch', () => {
-return makeWatch(paths.renders, 'build-renders')();
+  return makeWatch(paths.renders, 'build-renders')();
 });
 
 gulp.task('clean-renders', () => {
-return del("dist/**/*.pdf")
-  .then(() => del("dist/**/*.txt"))
+  return clean("dist/**/*.pdf", "dist/**/*.txt");
 })
 
 gulp.task('build-styles', () => {
@@ -79,7 +92,7 @@ gulp.task('build-styles:watch', () => {
 });
 
 gulp.task('clean-styles', () => {
-  return del(["dist/**/*.css", "dist/**/*.css.map"]);
+  return clean("dist/**/*.css", "dist/**/*.css.map");
 })
 
 gulp.task("build-scripts", () => {
@@ -112,7 +125,7 @@ gulp.task("build-scripts:watch", () => {
 });
 
 gulp.task('clean-scripts', () => {
-  return del(["dist/**/*.js", "dist/**/*.js.map"]);
+  return clean("dist/**/*.js", "dist/**/*.js.map");
 })
 
 gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-renders"]))
@@ -120,12 +133,28 @@ gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-h
 
 gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-renders:watch"])));
 
-gulp.task("serve", gulp.parallel(["watch", () => { 
-  return gulp
-    .src("./dist")
-    .pipe(webserver({
-      livereload: true,
-      directoryListing: false,
-      open: false
-    }));
-}]))
+gulp.task("serve", 
+  gulp.series(
+    (taskDone) => {
+      fs.exists('./dist', (exists) => {
+        if (exists) { return taskDone; }
+
+        fs.mkdir("./dist", (err) => {
+          return taskDone(err);
+        })
+      }); 
+    },   
+    gulp.parallel(
+      "watch", 
+      () => { 
+        return gulp
+          .src("./dist")
+          .pipe(webserver({
+            livereload: true,
+            directoryListing: false,
+            open: false
+          }));
+      }
+    )
+  )
+);
