@@ -1,11 +1,15 @@
+import * as Handlebars from 'handlebars';
+
 (function () {
 	function buildPage() {
 		var templateSource = document.getElementById('content-template').innerHTML,
 			template = Handlebars.compile(templateSource),
-			annotationElements,
-			annotations = {},
-			contentElements,
-			contentObject;
+			annotationElements: NodeListOf<HTMLElement>,
+			annotations : { 
+				[key: string]: any 
+			} = {} ,
+			contentElements: NodeListOf<HTMLElement>,
+			contentObject: { sections: any[] };
 
 		//the object that will be passed to the template
 		contentObject = {
@@ -16,7 +20,7 @@
 		annotationElements = Array.prototype.slice.call(annotationElements); //convert the NodeList to an array
 
 		//build a hash of annotations so we can easily the right annotation for a block of content as we build the contentObject
-		annotationElements.forEach(function (el, i) {
+		annotationElements.forEach(function (el) {
 			var key = el.getAttribute("data-for"),
 				content = el.innerHTML || el.innerText; //I've seen innerHTML be undefined for these elements on some browsers, so have a fail-safe
 
@@ -46,10 +50,10 @@
 
 		document.getElementById('container').innerHTML = template(contentObject);
 
-		function annotationToggleHandler(evt) {
+		function annotationToggleHandler(evt: Event) {
 			var state = this.getAttribute("data-state"),
-				annotations = document.querySelectorAll(".resume-annotation"),
-				newDisplay;
+				annotations: NodeListOf<HTMLElement> = document.querySelectorAll(".resume-annotation"),
+				newDisplay: string;
 
 			annotations = Array.prototype.slice.call(annotations); //convert the NodeList to an array
 
