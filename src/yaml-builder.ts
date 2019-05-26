@@ -157,7 +157,7 @@ export function buildPageFromYaml() {
   const templateSource = getTemplateSource();
   let template = Handlebars.compile(templateSource);
 
-  axios.default.get('/resume.yaml')
+  axios.default.get('./resume.yaml')
     .then((response) => {
       return yaml.load(response.data) as IResume
     })
