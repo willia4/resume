@@ -1,12 +1,12 @@
-$logo-font: "futura-pt-1","futura-pt-2", Helvetica, sans-serif;
-$title-font: "lemonde-sans-1","lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
-$body-font: "myriad-pro-1","myriad-pro-2", "Myriad Pro", Helvetica, sans-serif; 
-$annotation-font: "pollen-web-1","pollen-web-2", Pollen, Helvetica, sans-serif;
+$logo-font: "futura-pt-1", "futura-pt-2", Helvetica, sans-serif;
+$title-font: "lemonde-sans-1", "lemonde-sans-2", "Le Monde Sans Std", Helvetica, sans-serif;
+$body-font: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", Helvetica, sans-serif;
+$annotation-font: "pollen-web-1", "pollen-web-2", Pollen, Helvetica, sans-serif;
 
 $spot-color: #AD0932;
 $gray-color: #858585;
 
-$spacing: 8px;
+$spacing: 12px;
 $spacing-big: 15px;
 $spacing-small: 5px;
 $spacing-tiny: 2px;
@@ -25,16 +25,8 @@ $spacing-tiny: 2px;
 
 	li:before {
 		content: "‣ ";
-		// content: "◦ ";
-		// content: "• ";
 		color: $color;
 	}
-}
-
-//browsers want to render our custom tags even if they're in the header (the downside of not using script)
-//so ask them nicely not to do that.
-resume-content, resume-annotation {
-	display: none;
 }
 
 #print-email {
@@ -45,18 +37,9 @@ resume-content, resume-annotation {
 	text-align: right;
 }
 
-#annotations-toggle {
-	text-align: right;
 
-	a {
-		font-family: $annotation-font;
-		font-size: 75%;
-		color: $spot-color;
-		text-decoration: underline;
-	}
-}
 
-.skill-category {
+.skill-category, .dictionary-key {
 	font-weight: bolder;
 	font-style: italic;
 	font-variant: small-caps;
@@ -74,28 +57,97 @@ body {
 	@include custom-bullets($spot-color);
 
 	#container {
-		> header.page-title {
-			.logo {
-				font-family: $logo-font;
-				font-size: 200%;	
-				font-weight: 500;
-			}
-			
-			border-bottom-style: solid;
-			border-bottom-width: 1px;
-			border-bottom-color: #333;
+		// the main container is a 3 column grid on large screens; there are media queries below to adjust it 
+		// the left and right columns are empty though, so we can just make them 0 px on small screens using 
+		// grid auto sizing 
 
-			margin-bottom: $spacing;
+		// normal screens: 3 column grid with ample spacing around the center column
+		@media screen and (min-width: 1801px) {
+			display: grid;
+			grid-template-columns: 25% auto 25%;
 		}
 
-		//each .content-section represents a resume-content and resume-annotation pair
-		section.content-section {
-			margin-top: $spacing;
+		// cramped screens somewhat bigger than standard iPads: 3 column grid with less spacing
+		@media screen and (min-width: 1051px) and (max-width: 1800px) {
+			display: grid;
+			grid-template-columns: 15% auto 15%;
+		}
 
-			//a .content block hosts the title and content for a resume-content
-			.content {
+		// iPad-sized screens and small: no grid, just the content. Some 15px margins for breathing room
+		// for phone screens, we'll also turn off annotations below
+		@media (max-width: 1050px) {
+			display: block !important;
+			margin: 15px 15px 15px 15px;
+		}
+
+		#child-content {
+			grid-column: 2;
+
+			// most screens have annotations so the content sections should be in a 2-column grid
+			// main content in the bigger left column and annotations in the smaller right
+			@media (min-width: 741px) {
+				display: grid;
+				grid-template-columns: 1fr 0.5fr;
+			}
+
+			// phones have no space for annotations so don't show this as a grid
+			@media (max-width: 740px) {
+				display: block;
+			}
+
+			>header.page-title {
+				// take up the entire #content grid row with the header
+				// this important because we're using a border to draw a rule across
+				// the top of the page (under the logo)
+				grid-column: 1 / 3;
+
+				.logo {
+					font-family: $logo-font;
+					font-size: 200%;
+					font-weight: 500;
+				}
+
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #333;
+
+				margin-bottom: $spacing;
+			}
+
+			#hide-annotations {
+				// take up the entire row in #content
+				// this isn't strictly necessary; we could just have 
+				// it be in the third column
+				// 
+				// but this way, the `text-align:right` on #annotations-toggle
+				// will do the same thing even when the #content grid is turned off
+				grid-column: 1 / 3;
+
+				// no annotation buttons on phones
+				@media (max-width: 740px) {
+					display: none;
+				}
+
+				#annotations-toggle {
+					text-align: right;
+				
+					a {
+						font-family: $annotation-font;
+						font-size: 75%;
+						color: $spot-color;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			//a section.content block hosts the title and content for a resume-content
+			//it should go in the first column of the #child-content subgrid
+			section.content {
+				grid-column: 1;
+				margin-top: $spacing;
+
 				//represents the section title, like "Work History"
-				> header.content-title {
+				>header.content-title {
 					font-weight: bold;
 					font-family: $title-font;
 					color: $spot-color;
@@ -109,7 +161,7 @@ body {
 					margin-top: $spacing;
 
 					//Represents top-level headers like "Blackbaud" in "Work History"
-					> header.content-header {
+					>header.content-header {
 						margin-bottom: $spacing-big;
 
 						.section-title {
@@ -119,6 +171,7 @@ body {
 
 							padding-bottom: $spacing-tiny;
 						}
+
 						.section-subtitle {
 							font-style: italic;
 							font-size: 75%;
@@ -128,18 +181,14 @@ body {
 						}
 					}
 
-					//Represents sub-headers under the top-level header, like "Notable projects" under "Blackbaud"
+					//Represents sub-headers under the top-level header, like "Highlights" under "Blackbaud"
 					header.content-detail-header {
 						font-family: $title-font;
 						font-weight: bold;
-						// font-style: italic;
+
 						font-variant: small-caps;
 						margin-top: $spacing;
 						text-transform: lowercase;
-					}
-
-					header.content-detail-header:before {
-						// content: "—";
 					}
 
 					.highlight {
@@ -149,9 +198,16 @@ body {
 				}
 			}
 
-			//a .annotation block hosts the (empty) title and content for a resume-annotation
+			//a .annotation block hosts the content for a resume-annotation
+			//it should go in the second column of the #child-content subgrid
 			.annotation {
+				grid-column: 2;
 				margin-top: $spacing;
+
+				// no annotations on phones
+				@media (max-width: 740px) {
+					display: none;
+				}
 
 				//a .resume-annotation hosts the actual HTML from a resume-annotation
 				.resume-annotation {
@@ -171,14 +227,14 @@ body {
 						margin-top: $spacing-small;
 					}
 
-					//hidden by default
+					//hidden by default; javascript will change this as needed
 					display: none;
 				}
 			}
 		}
 	}
 
-	#downloads { 
+	#downloads {
 		border-top-style: solid;
 		border-top-color: $gray-color;
 		border-top-width: 1px;
@@ -187,6 +243,7 @@ body {
 		padding-top: $spacing-big;
 
 		color: $gray-color !important;
+
 		header {
 			color: $gray-color !important;
 		}
@@ -201,6 +258,10 @@ body {
 }
 
 @media print {
+	#container {
+		display: block !important;
+	}
+
 	#print-email {
 		display: block;
 	}
@@ -211,18 +272,6 @@ body {
 
 	.page-break {
 		page-break-after: always;
-	}
-
-	//bootstrap comes with a print CSS that turns off all colors with !important
-	//so we have to overcome this braindead idea by explicitly turning it back on 
-	//for any colorized components which are not hidden when printing
-	li:before, .content > header.content-title, .highlight {
-		color: $spot-color !important;
-	}
-
-	//bootstrap helpfully prints link URLs after a link. Since my link text *is* a URL, this is dumb. 
-	a[href]:after {
-		content: "";
 	}
 
 	//When printing, hide anything that would be hidden on mobile. This makes Firefox print like Chrome (Chrome prints like it's 
@@ -240,6 +289,14 @@ body {
 		font-size: 11pt;
 		padding-bottom: 0; //Added padding for the body on the screen; but don't mess with the margins when printing:
 		background-color: #ffffff; //don't try to print our mostly-white page color
+	}
+
+	// you can't click on links on paper, although you could in a PDF; 
+	// there isn't an obvious choice for this; but I think most resumes are printed
+	// out so go with the lesser of evils here
+	a {
+		color: black;
+		text-decoration: none;
 	}
 
 	@page {

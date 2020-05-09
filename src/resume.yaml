@@ -1,0 +1,98 @@
+---
+
+header: 
+  title: About
+  content: |
+      A senior developer with more than a decade of experience building out an enterprise-scale CRM system on a classic Microsoft stack while tackling issues 
+      like data modeling, reliability, customizability, and performance
+      
+      Interested in building new products on up-and-coming technologies, exploring the future of cloud deployments, 
+      and pursuing excellence while surrounded by a passionate team
+
+  annotation: |
+      The best part about this industry is that there's always something new to learn and the future is always bright and expansive.
+
+      I don't know if my next project will involve web backends, Javascript frontends, or mobile clients &mdash; but I know it will be exciting!
+
+sections:
+  - title: Key Skills
+    content: 
+      DevOps: Ansible, Docker, PowerShell
+      .Net: C#, VB.Net, Task Parallel Library, async programming
+      Microsoft SQL Server: performance tuning, advanced T-SQL, schema design
+      Web: Javascript, jQuery, AJAX
+      Apple: Objective-C, Cocoa, AppKit, UIKit
+
+  - title: Work History
+    extraClass: page-break
+    subsections: 
+      - title: Blackbaud, Inc.
+        subtitle: 
+          - Staff Software Engineer
+          - June 2005 &mdash; Present
+        headline: Highlights
+        content: |
+              Dev lead of the Enterprise DevOps team with the mandate to enable and empower teams to embrace Azure PaaS deployment options
+              
+              Dev lead on the Enterprise Platform Team for an Enterprise CRM solution
+              
+              Made many performance improvements and feature enhancements to a powerful ad-hoc query engine
+              
+              Diagnosed and resolved numerous production issues which could not be reproduced locally
+              
+              Re-wrote legacy threaded code to use best practices, maintain process consistency, and support cancellation with no disruption to existing client code
+              
+              Wrote automated tests for critical infrastructure pieces including the platform's security module, query engine accuracy, and long-running multi-threaded processes
+              
+              Added dozens of features and resolved hundreds of bugs in legacy areas of the system
+    annotation: |
+              The Enterprise DevOps Team was chartered to create a new system for deploying and maintaining the infrastructure for Blackbaud CRM &mdash; an Enterprise-scale CRM product &mdash; which was previously deployed via a legacy custom application.
+
+              On this team, I focus on combining open source tools such as Ansible with custom PowerShell scripts needed for our application and existing environments. 
+
+              As the team lead for the Enterprise Platform Team I focused on the foundational platform for Blackbaud CRM product. I was the front line for my team when dealing with thorny production issues that ranged from helping our hosting services team diagnose environmental problems to providing developer support for customer-written customizations on top of our platform.
+
+              In this role, I worked closely with our product support and product management 
+              teams to ensure that I was always providing a customer-focused solution whether I was fixing bugs across multiple product versions or recommending configuration changes to 
+              internal customer environments.
+
+              Today, I leverage my deep experience with our technology to provide guidance to other teams building new product features on the Infinity platform, help architect and guide new platform feature development, and perform code reviews for both my team and others.
+
+              And I've done all this without breaking compatibility for a large swathe of customizations written by both our clients and our internal professional services team.
+  
+  - title: Side Projects
+    content: | 
+           A series of personal websites hosted as a set of Docker containers on a major cloud provider; the sites are automatically deployed and updated via Ansible playbooks
+           
+           A website for organizing a book club &mdash; built on Ruby and Sinatra using Amazon Web Services and Redis for data storage</p
+           
+           Mac and iOS apps for generating secure, memorable passwords &mdash; built in Objective-C and Swift</p
+           
+           A "branded" website for displaying photos and albums from a 3rd-party photo hosting service &mdash; built in PHP with the SmugMug API for data storage</p
+           
+           This resume was written using the Handlebars template library and SCSS and is hosted in a Docker container managed by Ansible
+    annotation: |
+          My hobbies and side projects are great ways to explore new technologies and techniques that aren't always directly applicable at work.
+
+          From playing with interesting CoreAnimation methods in iOS to experimenting with non-relational cloud-based data stores, I'm never bored at home. 
+
+          By taking a broad survey of the current practices in the industry during my off-hours, I'm able to recognize new opportunities and possibilities when 
+          on the clock.
+
+          The source for this resume <a href="https://github.com/willia4/resume/">is available on GitHub</a>.
+  
+  - title: Education
+    subsections:
+      - title: Clemson University
+        subtitle: August 2001 &mdash; May 2005
+        content:
+          - BS in Computer Science
+          - Minor in Mathematics
+
+  - title: Contact
+    content:
+      - 843.323.0627
+      - '<a href="mailto:james@jameswilliams.me">james@jameswilliams.me</a>'
+      - '<a href="http://jameswilliams.me">http://jameswilliams.me</a>'
+    annotation: I can't wait to hear from you!
+
