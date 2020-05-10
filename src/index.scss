@@ -41,8 +41,9 @@ $spacing-tiny: 2px;
 
 .skill-category, .dictionary-key {
 	font-weight: bolder;
-	font-style: italic;
-	font-variant: small-caps;
+	// font-style: italic;
+	// font-variant: small-caps;
+	text-transform: uppercase;
 }
 
 body {
