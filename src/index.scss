@@ -41,8 +41,9 @@ $spacing-tiny: 2px;
 
 .skill-category, .dictionary-key {
 	font-weight: bolder;
-	font-style: italic;
-	font-variant: small-caps;
+	// font-style: italic;
+	// font-variant: small-caps;
+	text-transform: uppercase;
 }
 
 body {
@@ -272,6 +273,12 @@ body {
 
 	.page-break {
 		page-break-after: always;
+	}
+
+	//The printed page is much narrower than most displays and looks unbalanced
+	//if it is left-aligned
+	.logo {
+		text-align: right;
 	}
 
 	//When printing, hide anything that would be hidden on mobile. This makes Firefox print like Chrome (Chrome prints like it's 
