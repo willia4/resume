@@ -13,9 +13,9 @@ passionate team
 
 ## Key Skills
 
-* DevOps — Azure PaaS, Azure DevOps Pipelines, PowerShell & bash, Docker, Kubernetes
-* .Net — C#, ASP.Net Core, async and parallel programming
-* Microsoft SQL Server — performance tuning, advanced T-SQL, schema design
+* DevOps-- Azure PaaS, Azure DevOps Pipelines, PowerShell & bash, Docker, Kubernetes
+* .Net-- C#, ASP.Net Core, async and parallel programming
+* Microsoft SQL Server -- performance tuning, advanced T-SQL, schema design
 * Web: Typescript & Javascript
 
 
@@ -23,7 +23,7 @@ passionate team
 ## Work History
 ### Blackbaud, Inc.
 	Laureate Software Engineer
-	June 2005 — Present
+	June 2005 -- Present
 
 #### Highlights
 
@@ -65,7 +65,7 @@ TypeScript app; the site is hosted as an aforementioned Docker container
 
 ## Education
 ### Clemson University
-	August 2001 — May 2005
+	August 2001 -- May 2005
 
 * BS in Computer Science
 * Minor in Mathematics
