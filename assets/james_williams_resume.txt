@@ -1,65 +1,67 @@
 # James Williams
 
 ## About
-A senior developer with more than a decade of experiece building out an 
-enterprise-scale CRM system on a classic Microsoft stack while tackling issues 
-like data modeling, reliability, customizability, and performance
+A senior developer with fifteen years of experience building out and supporting
+enterprise-scale CRM and transaction systems on Microsoft stacks while tackling
+issues like data modeling, reliability, customizability, and performance
 
-Interested in building new products on up-and-coming technologies, exploring 
-the future of cloud deployments, and pursuing excellence while surrounded by 
-a passionate team
+Interested in building new products on up-and-coming technologies, exploring
+the future of cloud deployments, and pursuing excellence while surrounded by a
+passionate team
+
+
 
 ## Key Skills
 
-* DevOps — Ansible, Docker, PowerShell
-* .Net — C#, VB.Net, Task Parallel Library, async programming
+* DevOps — Azure PaaS, Azure DevOps Pipelines, PowerShell & bash, Docker, Kubernetes
+* .Net — C#, ASP.Net Core, async and parallel programming
 * Microsoft SQL Server — performance tuning, advanced T-SQL, schema design
-* Javascript, jQuery, AJAX
-* Objective-C, Cocoa, AppKit, UIKit
+* Web: Typescript & Javascript
+
+
 
 ## Work History
 ### Blackbaud, Inc.
-	Staff Software Engineer
+	Laureate Software Engineer
 	June 2005 — Present
 
 #### Highlights
 
-Dev lead of the Enterprise DevOps team with the mandate to enable and empower 
-teams to embrace Azure PaaS deployment options
+Lead of the DevOps team charged with enabling and empowering teams to quickly
+leverage Azure's PaaS deployment options
+            
+First-line architectural consultant and subject matter expert for any team
+wanting to go forward with new Azure technologies
 
-Made many performance improvements and feature enhancements to a powerful 
+Lead on the team charged with building and maintaining the framework platform
+for an enterprise CRM solution
+
+Made many performance improvements and feature enhancements to a powerful
 ad-hoc query engine
 
-Diagnosed and resolved numerous production issues which could not be reproduced 
-locally
-
-Re-wrote legacy threaded code to use best practices, maintain process 
-consistency, and support cancellation with no disruption to existing client 
-code
-
-Wrote automated tests for critical infrastructure pieces including the 
-platform's security module, query engine accuracy, and long-running 
-multi-threaded processes
-
-Added dozens of features and resolved hundreds of bugs in legacy areas of the 
+Added dozens of features and resolved hundreds of bugs in legacy areas of the
 system
 
+
+
 ## Side Projects
-A series of personal websites hosted as a set of Docker containers on a major 
-cloud provider; the sites are automatically deployed and updated via 
-Ansible playbooks
+A series of personal websites hosted as a set of Docker containers on a major
+cloud provider; both the infrastructure and sites are deployed and maintained
+via a custom CLI tool
+           
+A website for organizing a book club -- built on Ruby and Sinatra using
+Amazon Web Services and Redis for data storage
 
-A website for organizing a book club — built on Ruby and Sinatra using Amazon 
-Web Services and Redis for data storage
-
-Mac and iOS apps for generating secure, memorable passwords — built in 
+Mac and iOS apps for generating secure, memorable passwords -- built in
 Objective-C and Swift
 
-A "branded" website for displaying photos and albums from a 3rd-party photo 
-hosting service — built in PHP with the SmugMug API for data storage
+A "branded" website for displaying photos and albums from a 3rd-party photo
+hosting service -- built in PHP with the SmugMug API for data storage
 
-This resume was written using the Handlebars template library and SCSS and is 
-hosted in a Docker container managed by Ansible
+This resume is a YAML file that is rendered client-side by a custom
+TypeScript app; the site is hosted as an aforementioned Docker container
+
+
 
 ## Education
 ### Clemson University
@@ -67,6 +69,8 @@ hosted in a Docker container managed by Ansible
 
 * BS in Computer Science
 * Minor in Mathematics
+
+
 
 ## Contact
 * 843.323.0627
