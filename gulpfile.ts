@@ -1,6 +1,9 @@
 import * as gulp from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
-import * as sass from 'gulp-sass';
+import * as gulpSass from 'gulp-sass';
+import * as nodeSass from 'node-sass';
+const sass = gulpSass(nodeSass);
+
 import * as uglify from 'gulp-uglify';
 import * as util from 'gulp-util';
 import * as tap from 'gulp-tap';
@@ -152,7 +155,7 @@ gulp.task('clean-scripts', () => {
 })
 
 gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-assets"]))
-gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-assets"])));
+gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-assets", "build-yaml"])));
 
 gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-assets:watch", "build-yaml:watch"])));
 
