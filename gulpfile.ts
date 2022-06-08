@@ -1,6 +1,9 @@
 import * as gulp from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
-import * as sass from 'gulp-sass';
+import * as gulpSass from 'gulp-sass';
+import * as nodeSass from 'node-sass';
+const sass = gulpSass(nodeSass);
+
 import * as uglify from 'gulp-uglify';
 import * as util from 'gulp-util';
 import * as tap from 'gulp-tap';

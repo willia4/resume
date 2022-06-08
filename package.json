@@ -11,7 +11,7 @@
   "devDependencies": {
     "@types/browserify": "^12.0.37",
     "@types/gulp": "^4.0.9",
-    "@types/gulp-sass": "^4.0.0",
+    "@types/gulp-sass": "^5.0.0",
     "@types/gulp-sourcemaps": "0.0.32",
     "@types/gulp-tap": "^1.0.1",
     "@types/gulp-uglify": "^3.0.7",
@@ -26,7 +26,7 @@
     "glob-watcher": "^5.0.5",
     "globby": "^9.2.0",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-tap": "^1.0.1",
     "gulp-typescript": "^5.0.1",
