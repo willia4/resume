@@ -1,7 +1,15 @@
-#IMAGE-NAME: willia4/resume
-#IMAGE-VERSION: 3.1.3
+FROM node:18 as builder
+
+COPY *.ts /app/
+COPY *.json /app/
+COPY src/ /app/src
+
+WORKDIR /app
+RUN npm install -g gulp && npm install
+RUN gulp build
+
 FROM nginx
 LABEL me.jameswilliams.author="james@jameswilliams.me"
 
-ADD dist /usr/share/nginx/html
-ADD assets /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY assets /usr/share/nginx/html

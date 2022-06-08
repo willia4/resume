@@ -155,7 +155,7 @@ gulp.task('clean-scripts', () => {
 })
 
 gulp.task("clean", gulp.parallel(["clean-scripts", "clean-html", "clean-styles", "clean-assets"]))
-gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-assets"])));
+gulp.task("build", gulp.series("clean", gulp.parallel(["build-scripts", "build-html", "build-styles", "build-assets", "build-yaml"])));
 
 gulp.task("watch", gulp.series("clean", gulp.parallel(["build-scripts:watch", "build-html:watch", "build-styles:watch", "build-assets:watch", "build-yaml:watch"])));
 
