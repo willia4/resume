@@ -33,7 +33,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "gulp-webserver": "^0.9.1",
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "tar": "^6.1.11",
     "through2": "^3.0.2",
     "ts-node": "^8.10.2",
